@@ -1,0 +1,83 @@
+.NavigationBar_Container{
+	display : flex;
+	flex-direction : column;
+	margin : 0px 0px 0px 0px;
+	padding : 0px 0px 0px 0px;
+	width: 374px;
+	height: 1510px;	
+	position : absolute;
+	overflow : visible;
+	filter: drop-shadow(0px 3px 8px rgba(62, 100, 146, 0.161));
+}
+
+#Rectangle_ {
+	color: rgba(255,255,255,1);
+}
+	
+#Home_Item{
+	position: absolute;
+	width: 94px;
+	height: 18.105px;
+	left: 32px;
+	top: 121.179px;
+	overflow: visible;
+}
+
+#Home_Icon {
+	overflow: visible;
+	position: absolute;
+	width: 20px;
+	height: 17.1px;
+	left: 0px;
+	top: 1.005px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Home_Text{
+	left: 54px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 41px;
+	white-space: nowrap;
+	line-height: 20px;
+	margin-top: -2.5px;
+	text-align: left;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
+	color: rgba(159,169,188,1);
+}
+#EditProfile_Item {
+	position: absolute;
+	width: 123px;
+	height: 20.112px;
+	left: 35px;
+	top: 179.774px;
+	overflow: visible;
+}
+#EditProfile_Icon {
+	overflow: visible;
+	position: absolute;
+	width: 14.816px;
+	height: 20.112px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#EditProfile_Text{
+	left: 51px;
+	top: 1.005px;
+	position: absolute;
+	overflow: visible;
+	width: 73px;
+	white-space: nowrap;
+	line-height: 20px;
+	margin-top: -2.5px;
+	text-align: left;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
+	color: rgba(255,90,135,1);
+}
