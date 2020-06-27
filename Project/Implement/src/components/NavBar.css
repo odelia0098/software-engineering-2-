@@ -29,11 +29,12 @@
   transform: matrix(1, 0, 0, 1, 0, 0);
 }
 #Home_Text {
-  left: 54px;
+  left: 30px;
   top: 0px;
   position: absolute;
   overflow: visible;
   width: 41px;
+  text-decoration: none;
   white-space: nowrap;
   line-height: 20px;
   margin-top: -2.5px;
@@ -62,9 +63,10 @@
   transform: matrix(1, 0, 0, 1, 0, 0);
 }
 #EditProfile_Text {
-  left: 51px;
+  left: 28px;
   top: 1.005px;
   position: absolute;
+  text-decoration: none;
   overflow: visible;
   width: 73px;
   white-space: nowrap;
