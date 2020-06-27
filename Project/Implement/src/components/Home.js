@@ -1,9 +1,10 @@
 import React from "react";
+import StudentPanel from "./StudentPanel";
 
 const Home = () => {
   return (
     <div>
-      <span>HOME</span>
+      <StudentPanel />
     </div>
   );
 };
