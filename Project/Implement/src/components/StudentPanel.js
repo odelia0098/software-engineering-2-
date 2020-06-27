@@ -10,7 +10,7 @@ const StudentPanel = () => {
         <img
           src={require("./Group_128.png")}
           id="logoIcon"
-          alt="lamp"
+          alt="lamp1"
           loading="lazy"
         />
         <span className="navbar-brand" id="LAMP">

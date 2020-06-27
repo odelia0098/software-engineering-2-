@@ -7,7 +7,7 @@ import Login from "./components/Login";
 import Home from "./components/Home";
 import Signup from "./components/Signup";
 import StudentPanel from "./components/StudentPanel";
-import StudentForm from "./components/Student'sForms";
+import StudentForm from "./components/StudentForms";
 
 const App = () => {
   return (
@@ -18,7 +18,7 @@ const App = () => {
           <Route path="/home" component={Home} />
           <Route path="/signup" component={Signup} />
           <Route path="/studentPanel" component={StudentPanel} />
-          <Route path="/studentForm" component={StudentForm} />
+          <Route path="/studentform" component={StudentForm} />
         </Switch>
       </div>
     </Router>

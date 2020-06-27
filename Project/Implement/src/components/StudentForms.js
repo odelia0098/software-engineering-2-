@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Personal from "./StudentPersonalInfo";
-import Contact from "./StudentContactInfo";
-import Educational from "./EducationalInfo";
+import Personal from "./StudentPersonalInfos";
+import Contact from "./StudentContactInfos";
+import Educational from "./StudentEducationalInfos";
 import StudentPanel from "./StudentPanel";
 
 // import Userdetails from "./Userdetails";
