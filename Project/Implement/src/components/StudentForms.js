@@ -35,7 +35,7 @@ const StudentForm = () => {
   const [school, setSchool] = useState("");
 
   const handleChange = input => e => {
-    console.log(e.target.value);
+    //console.log(e.target.value);
     if (input === "country") {
       setCountry(e.target.value);
     }
@@ -66,7 +66,8 @@ const StudentForm = () => {
     }
 
     if (input === "cellphone") {
-      setCellphone(e.target.value);
+      console.log(e);
+      setCellphone(e);
     }
 
     if (input === "city") {
