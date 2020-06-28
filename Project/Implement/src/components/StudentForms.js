@@ -93,7 +93,7 @@ const StudentForm = () => {
     }
 
     if (input === "school") {
-      setZipCode(e.target.value);
+      setSchool(e.target.value);
     }
   }; //end of handle change
 
