@@ -4,8 +4,8 @@ import "./NavBar.css";
 
 const StudentNB = () => {
   return (
-    <div>
-      <nav className="navbar NavigationBar_Container">
+    <div className=" NavigationBar_Container">
+      <nav className="navbar">
         <ul className="navbar-nav">
           <li
             className="nav-item"
