@@ -2,8 +2,6 @@ import React from "react";
 import TextField from "@material-ui/core/TextField";
 import MenuItem from "@material-ui/core/MenuItem";
 import Button from "@material-ui/core/Button";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
 import Popup from "reactjs-popup";
 
 const genders = [
@@ -24,20 +22,22 @@ const countries = [
   }
 ];
 const Personal = props => {
-  // const onClick = () => {
-  //   console.log({ props });
-  //   return (
-  //     <div>
-  //       <Popup position="right center">
-  //         <List>
-  //           <ListItem
-  //             primaryText="Your first name is:"
-  //             secondaryText={props.firstName}
-  //           />
-  //         </List>
-  //       </Popup>
-  //     </div>
-  //   );
+  //const func1 = () => {
+  //   return <MyPopup />;
+
+  //   // return (
+  //   //   <div>
+  //   //     {/* <Popup position="right center">
+  //   //       {/* <List>
+  //   //         <ListItem
+  //   //           primaryText="Your first name is:"
+  //   //           secondaryText={props.firstName}
+  //   //         />
+  //   //       </List> */}
+  //   //       <h2>This is popup</h2>
+  //   //     </Popup> */}
+  //   //   </div>
+  //   // );
   // };
   return (
     <div className="personal-forms">
@@ -114,16 +114,17 @@ const Personal = props => {
             ))}
           </TextField>
 
-          <Button className="forms-buttons" variant="contained">
-            SUBMIT PERSONAL INFRMAION
-          </Button>
-
-          {/* <List>
-                <ListItem
-                  primaryText="Your first name is:"
-                  secondaryText={props.firstName}
-                />
-              </List> */}
+          <Popup
+            className="popup"
+            trigger={
+              <Button className="forms-buttons" variant="contained">
+                SUBMIT PERSONAL INFRMAION
+              </Button>
+            }
+            position="right center"
+          >
+            <div>Your Personal information Added!</div>
+          </Popup>
         </div>
       </form>
     </div>
