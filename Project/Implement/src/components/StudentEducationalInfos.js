@@ -2,6 +2,7 @@ import React from "react";
 import TextField from "@material-ui/core/TextField";
 import MenuItem from "@material-ui/core/MenuItem";
 import Button from "@material-ui/core/Button";
+import Popup from "reactjs-popup";
 
 const grades = [
   {
@@ -117,9 +118,17 @@ const Educational = props => {
             value={props.gpa}
           />
 
-          <Button className="forms-buttons" variant="contained">
-            SUBMIT EDUCATIONAL INFRMAION
-          </Button>
+          <Popup
+            className="popup"
+            trigger={
+              <Button className="forms-buttons" variant="contained">
+                SUBMIT EDUCATIONAL INFRMAION
+              </Button>
+            }
+            position="right center"
+          >
+            <div>Your Educational information Added!</div>
+          </Popup>
         </div>
       </form>
     </div>
