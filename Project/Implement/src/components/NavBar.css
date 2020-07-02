@@ -1,14 +1,25 @@
 .NavigationBar_Container {
   display: flex;
   flex-direction: column;
-  margin: 0px 0px 0px 0px;
-  padding: 0px 0px 0px 0px;
-  width: 374px;
-  height: 1510px;
   position: absolute;
   overflow: visible;
-  color: rgba(255, 255, 255, 1);
-  filter: drop-shadow(0px 3px 8px rgba(62, 100, 146, 0.161));
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  width: 350px;
+  height: 1486px;
+  fill: rgba(255, 255, 255, 1);
+  box-shadow: 0px 3px 8px rgba(62, 100, 146, 0.161);
+}
+
+.NavBar_Wrapper {
+  /* margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 0px;
+  margin-left: 0px; */
+  width: 374px;
+  height: 1510px;
+  /* padding: 0px 0px 0px 0px; */
+  /* filter: drop-shadow(0px 3px 8px rgba(62, 100, 146, 0.161)); */
 }
 
 #Home_Item {
@@ -80,7 +91,7 @@
   font-size: 15px;
   color: rgba(255, 90, 135, 1);
 }
-.topLabel {
+.topLabel_Wrapper {
   overflow: visible;
   position: absolute;
   width: 1944px;
@@ -88,8 +99,17 @@
   left: 0px;
   top: 0px;
   transform: matrix(1, 0, 0, 1, 0, 0);
+  /* filter: drop-shadow(0px 3px 8px rgba(62, 100, 146, 0.161)); */
+  box-shadow: 0px 3px 8px rgba(62, 100, 146, 0.161);
+}
+#topLabel {
+  width: 1944px;
+  height: 88.1px;
   fill: rgba(255, 255, 255, 1);
-  filter: drop-shadow(0px 3px 8px rgba(62, 100, 146, 0.161));
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
 }
 
 #LAMP {
@@ -120,3 +140,22 @@
 /* #shadow {
   filter: drop-shadow(0px 3px 8px rgba(62, 100, 146, 0.161));
 } */
+#Search_Box {
+  position: absolute;
+  width: 138px;
+  height: 18.39px;
+  left: 379px;
+  top: 34px;
+  overflow: visible;
+}
+
+#Search_Text {
+  white-space: nowrap;
+  line-height: 16px;
+  text-align: right;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: rgba(159, 169, 188, 1);
+}
