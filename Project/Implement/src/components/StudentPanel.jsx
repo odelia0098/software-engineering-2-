@@ -1,6 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
 
 import StudentNB from "./NavBar";
+import SearchBox from "./Search";
 import "./NavBar.css";
 
 const StudentPanel = () => {
@@ -17,16 +18,9 @@ const StudentPanel = () => {
           <span className="navbar-brand" id="LAMP">
             LAMP
           </span>
-
           <div id="Search_Box">
-            <input
-              type="text"
-              id="Search_Text"
-              name="SearchBox"
-              placeholder="I'm searching for"
-            />
+            <SearchBox />
           </div>
-
           <div className="divider">
             <svg id="devider_Line" viewBox="0 0 1 30">
               <path d="M 0 0 L 0 30" />

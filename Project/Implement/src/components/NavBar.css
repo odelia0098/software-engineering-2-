@@ -126,7 +126,7 @@
   overflow: visible;
 }
 
-#Search_Box {
+.Search_Box {
   position: absolute;
   width: 138px;
   height: 18.39px;
@@ -150,6 +150,17 @@
   font-weight: normal;
   font-size: 14px;
   color: rgba(159, 169, 188, 1);
+}
+
+#Search_Icon {
+  overflow: visible;
+  position: absolute;
+  width: 18.392px;
+  height: 18.39px;
+  left: 0px;
+  top: 0px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  fill: rgba(159, 169, 188, 1);
 }
 
 .profile_Indicator {
