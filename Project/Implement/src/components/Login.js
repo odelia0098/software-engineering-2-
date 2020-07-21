@@ -44,19 +44,25 @@ const Login = () => {
             </div>
 
             <div>
-              <button
+              <Link className="login-btn" to="/home">
+                Login <FiLogIn size={"15"} />
+              </Link>
+              {/* <button
                 type="submit"
                 className="login-btn"
                 onClick={loginClicked}
               >
                 Login <FiLogIn size={"15"} />
-              </button>
+              </button> */}
             </div>
           </form>
         </div>
       </div>
 
       <div className="container2">
+        <div id="icon2">
+          <img src={require("../Images/loginPage.png")} alt={"lamp"} />
+        </div>
         <div id="welcome_back">
           <span>WELCOME BACK!</span>
         </div>
