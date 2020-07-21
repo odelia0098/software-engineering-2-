@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import { FiLogIn } from "react-icons/fi";
+import Radio from "@material-ui/core/Radio";
+import RadioGroup from "@material-ui/core/RadioGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import FormControl from "@material-ui/core/FormControl";
 
 const initialState = {
   email: "",
@@ -9,7 +13,7 @@ const initialState = {
   emailError: "",
   passwordError: "",
   confirmPasswordError: "",
-  captchaError: "",
+  captchaError: ""
 };
 
 const emailRegex = RegExp(
@@ -18,25 +22,23 @@ const emailRegex = RegExp(
 const passwordRegex = RegExp(/^[A-Za-z]\w{7,14}$/);
 const ValidationForm = () => {
   const [state, setState] = useState(initialState);
+  const [type, setType] = useState(initialState);
 
-  const handleChange = (event) => {
+  const handleChange = event => {
     const target = event.target;
+    setType(target.value);
     const check = target.type === "checkbox";
     setState(v => ({
       ...v,
-      [target.name]: check ? target.checked : target.value,
+      [target.name]: check ? target.checked : target.value
     }));
-
-    console.log(state);
 
     switch (target.name) {
       case "email":
         setState(v => ({
           ...v,
-          emailError: emailRegex.test(target.value)
-            ? ""
-            : "Invalid email"
-        }))
+          emailError: emailRegex.test(target.value) ? "" : "Invalid email"
+        }));
         break;
 
       case "password":
@@ -80,7 +82,7 @@ const ValidationForm = () => {
     return true;
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = event => {
     event.preventDefault();
 
     console.log(state);
@@ -97,6 +99,26 @@ const ValidationForm = () => {
   return (
     <div className="form-wrapper">
       <form onSubmit={handleSubmit} noValidate>
+        <FormControl>
+          <RadioGroup
+            aria-label="userType"
+            name="type1"
+            value={type}
+            onChange={handleChange}
+          >
+            <FormControlLabel
+              value="teacher"
+              control={<Radio />}
+              label="I am a teacher!"
+            />
+            <FormControlLabel
+              value="student"
+              control={<Radio />}
+              label="I am a student!"
+            />
+          </RadioGroup>
+        </FormControl>
+
         <div className="item-wrapper">
           <input
             type="Email"
@@ -108,7 +130,6 @@ const ValidationForm = () => {
           />
           <div className="form-error">{state.emailError}</div>
         </div>
-
         <div className="item-wrapper">
           <input
             type="password"
@@ -120,7 +141,6 @@ const ValidationForm = () => {
           />
           <div className="form-error">{state.passwordError}</div>
         </div>
-
         <div className="item-wrapper">
           <input
             type="password"
@@ -132,7 +152,6 @@ const ValidationForm = () => {
           />
           <div className="form-error">{state.confirmPasswordError}</div>
         </div>
-
         <div className="item-wrapper">
           <input
             type="text"
@@ -145,7 +164,6 @@ const ValidationForm = () => {
 
           <div className="form-error">{state.captchaError}</div>
         </div>
-
         <div>
           <button type="submit" className="login-btn">
             Sign Up <FiLogIn size={"15"} />
