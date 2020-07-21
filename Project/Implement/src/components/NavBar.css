@@ -3,11 +3,12 @@
   flex-direction: column;
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
-  width: 374px;
+  width: 150px;
   height: 1510px;
   position: absolute;
   overflow: visible;
   color: rgba(255, 255, 255, 1);
+  filter: drop-shadow(0px 3px 8px rgba(62, 120, 146, 0.161));
 }
 
 #Home_Item {
