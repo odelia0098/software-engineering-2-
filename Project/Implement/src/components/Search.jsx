@@ -29,7 +29,7 @@ const SearchBox = () => {
   };
 
   return (
-    <div className="Search_Box">
+    <div>
       <input
         type="text"
         id="Search_Text"

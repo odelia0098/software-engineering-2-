@@ -1,9 +1,30 @@
+#StudentPanel {
+  position: absolute;
+  width: 1920px;
+  height: 1524px;
+  background-color: rgba(255, 255, 255, 1);
+  overflow: hidden;
+  --web-view-name: Student Panel;
+  --web-view-id: Student_Panel;
+  --web-scale-on-resize: true;
+  --web-enable-deep-linking: true;
+}
+
+#NB_BackGround {
+  position: absolute;
+  width: 350px;
+  height: 1486px;
+  left: -1px;
+  top: 87px;
+  overflow: visible;
+}
+
 .NavigationBar_Container {
   display: flex;
   flex-direction: column;
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
-  width: 150px;
+  width: 374px;
   height: 1510px;
   position: absolute;
   overflow: visible;
@@ -80,6 +101,15 @@
   font-size: 15px;
   color: rgba(255, 90, 135, 1);
 }
+
+#topLabel_BG {
+  position: absolute;
+  width: 1920px;
+  height: 87px;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
+}
 .topLabel {
   overflow: visible;
   position: absolute;
@@ -121,6 +151,8 @@
   position: absolute;
   width: 138px;
   height: 18.39px;
+  left: 379px;
+  top: 34px;
   color: rgba(159, 169, 188, 1);
 }
 
