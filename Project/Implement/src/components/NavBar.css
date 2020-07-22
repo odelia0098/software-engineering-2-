@@ -8,7 +8,7 @@
   position: absolute;
   overflow: visible;
   color: rgba(255, 255, 255, 1);
-  filter: drop-shadow(0px 3px 8px rgba(62, 120, 146, 0.161));
+  box-shadow: 0px 3px 8px rgba(62, 120, 146, 0.161);
 }
 
 #Home_Item {
@@ -89,6 +89,7 @@
   top: 0px;
   transform: matrix(1, 0, 0, 1, 0, 0);
   fill: rgba(255, 255, 255, 1);
+  box-shadow: 0px 3px 8px rgba(62, 100, 146, 0.161);
 }
 
 #LAMP {
@@ -116,6 +117,114 @@
   overflow: visible;
 }
 
-#shadow {
-  filter: drop-shadow(0px 3px 8px rgba(62, 100, 146, 0.161));
+.Search_Box {
+  position: absolute;
+  width: 138px;
+  height: 18.39px;
+  color: rgba(159, 169, 188, 1);
+}
+
+#Search_Icon {
+  overflow: visible;
+  position: absolute;
+  width: 18.392px;
+  height: 18.39px;
+  left: 0px;
+  top: 0px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  fill: rgba(159, 169, 188, 1);
+}
+
+#Search_Text {
+  left: 34px;
+  top: 1px;
+  position: absolute;
+  overflow: visible;
+  width: 105px;
+  white-space: nowrap;
+  line-height: 16px;
+  margin-top: -1px;
+  text-align: right;
+  font-family: Roboto;
+  font-style: normal;
+  font-size: 14px;
+  color: rgba(159, 169, 188, 1);
+}
+
+.profile_Indicator {
+  position: absolute;
+  width: 98.845px;
+  height: 56px;
+  left: 1763px;
+  top: 16px;
+  overflow: visible;
+}
+#profile_Name {
+  left: 66.845px;
+  top: 19px;
+  position: absolute;
+  overflow: visible;
+  width: 32px;
+  height: 18px;
+  white-space: nowrap;
+  line-height: 16px;
+  margin-top: -0.5px;
+  text-align: right;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  color: rgba(16, 28, 54, 1);
+}
+
+#profile_Pic {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
+}
+
+.divider {
+  position: absolute;
+  width: 1px;
+  height: 30px;
+  left: 1737.5px;
+  top: 28.5px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  overflow: visible;
+}
+#devider_Line {
+  fill: black transparent;
+  stroke: rgba(214, 220, 225, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+
+#notification {
+  overflow: visible;
+  position: absolute;
+  width: 16.529px;
+  height: 18.39px;
+  left: 0px;
+  top: 0px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+#chat {
+  overflow: visible;
+  position: absolute;
+  width: 22.244px;
+  height: 16.88px;
+  left: 1687.763px;
+  top: 35px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+input[type="text"] {
+  border: none;
 }

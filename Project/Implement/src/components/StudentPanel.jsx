@@ -7,8 +7,8 @@ import "./NavBar.css";
 const StudentPanel = () => {
   return (
     <div>
-      <div className="topLabel_Wrapper">
-        <nav className="navbar navbar-light" id="topLabel">
+      <div className="topLabel">
+        <nav className="navbar navbar-light">
           <img
             src={require("./Group_128.png")}
             id="logoIcon"
@@ -18,7 +18,7 @@ const StudentPanel = () => {
           <span className="navbar-brand" id="LAMP">
             LAMP
           </span>
-          <div id="Search_Box">
+          <div className="Search_Box">
             <SearchBox />
           </div>
           <div className="divider">
