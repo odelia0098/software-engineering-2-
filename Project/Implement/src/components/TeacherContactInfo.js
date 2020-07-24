@@ -34,7 +34,7 @@ const states = [
     value: "Chahar Mahal"
   },
   {
-    value: "Khorasan Jonoobi"
+    value: "Khorasan Jonoubi"
   },
   {
     value: "Khorasan Razavi"
