@@ -10,6 +10,7 @@ import Signup from "./components/Signup";
 import StudentPanel from "./components/StudentPanel";
 import StudentForm from "./components/StudentForms";
 import TeacherForm from "./components/TeacherForms";
+import TeacherPanel from "./components/TeacherPanel";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/studentPanel" component={StudentPanel} />
           <Route path="/studentform" component={StudentForm} />
           <Route path="/teacherForm" component={TeacherForm} />
+          <Route path="/teacherPanel" component={TeacherPanel} />
         </Switch>
       </div>
     </Router>

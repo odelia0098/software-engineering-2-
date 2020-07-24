@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
 
-const StudentNB = () => {
+const TeacherNB = () => {
   return (
     <div>
       <nav className="NavigationBar_Container">
@@ -12,7 +12,7 @@ const StudentNB = () => {
             id="Home_Item"
             style={{ listStyleType: "none" }}
           >
-            <Link className="nav-link" id="Home_Text" to="/studentPanel">
+            <Link className="nav-link" id="Home_Text" to="/teacherPanel">
               Home
             </Link>
           </li>
@@ -21,7 +21,7 @@ const StudentNB = () => {
             id="EditProfile_Item"
             style={{ listStyleType: "none" }}
           >
-            <Link className="nav-link" id="EditProfile_Text" to="/studentForm">
+            <Link className="nav-link" id="EditProfile_Text" to="/teacherForm">
               Edit Profile
             </Link>
           </li>
@@ -31,4 +31,4 @@ const StudentNB = () => {
   );
 };
 
-export default StudentNB;
+export default TeacherNB;
