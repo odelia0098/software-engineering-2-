@@ -22,23 +22,6 @@ const countries = [
   }
 ];
 const Personal = props => {
-  //const func1 = () => {
-  //   return <MyPopup />;
-
-  //   // return (
-  //   //   <div>
-  //   //     {/* <Popup position="right center">
-  //   //       {/* <List>
-  //   //         <ListItem
-  //   //           primaryText="Your first name is:"
-  //   //           secondaryText={props.firstName}
-  //   //         />
-  //   //       </List> */}
-  //   //       <h2>This is popup</h2>
-  //   //     </Popup> */}
-  //   //   </div>
-  //   // );
-  // };
   return (
     <div className="top-form">
       <form>
@@ -48,7 +31,7 @@ const Personal = props => {
         <div>
           <TextField
             required
-            id="stu-first-name"
+            id="tcr-first-name"
             variant="outlined"
             label="First Name"
             onChange={props.handleChange("firstName")}
@@ -58,7 +41,7 @@ const Personal = props => {
 
           <TextField
             required
-            id="stu-last-name"
+            id="tcr-last-name"
             variant="outlined"
             label="Last Name"
             onChange={props.handleChange("lastName")}
@@ -69,7 +52,7 @@ const Personal = props => {
           <TextField
             required
             select
-            id="stu-gender"
+            id="tcr-gender"
             variant="outlined"
             label="Gender"
             onChange={props.handleChange("gender")}
@@ -85,7 +68,7 @@ const Personal = props => {
 
           <TextField
             required
-            id="stu-birthday"
+            id="tcr-birthday"
             variant="outlined"
             label="Date of birth"
             type="date"
@@ -100,7 +83,7 @@ const Personal = props => {
           <TextField
             required
             select
-            id="stu-country"
+            id="tcr-country"
             variant="outlined"
             label="Country"
             onChange={props.handleChange("country")}

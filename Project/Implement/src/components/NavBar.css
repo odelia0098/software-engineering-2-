@@ -24,8 +24,9 @@
   flex-direction: column;
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
-  width: 374px;
+  width: 230px;
   height: 1510px;
+  top: 22px;
   position: absolute;
   overflow: visible;
   color: rgba(255, 255, 255, 1);
@@ -67,6 +68,11 @@
   font-size: 15px;
   color: rgba(159, 169, 188, 1);
 }
+
+#Home_Text:focus {
+  color: rgba(255, 90, 135, 1);
+}
+
 #EditProfile_Item {
   position: absolute;
   width: 123px;
@@ -99,6 +105,9 @@
   font-style: normal;
   font-weight: normal;
   font-size: 15px;
+  color: rgba(159, 169, 188, 1);
+}
+#EditProfile_Text:focus {
   color: rgba(255, 90, 135, 1);
 }
 

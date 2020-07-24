@@ -9,6 +9,7 @@ import Home from "./components/Home";
 import Signup from "./components/Signup";
 import StudentPanel from "./components/StudentPanel";
 import StudentForm from "./components/StudentForms";
+import TeacherForm from "./components/TeacherForms";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/signup" component={Signup} />
           <Route path="/studentPanel" component={StudentPanel} />
           <Route path="/studentform" component={StudentForm} />
+          <Route path="/teacherForm" component={TeacherForm} />
         </Switch>
       </div>
     </Router>

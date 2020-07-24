@@ -5,6 +5,9 @@ const Home = () => {
   return (
     <div>
       <StudentPanel />
+      <div id="edit_text">
+        <span>Home</span>
+      </div>
     </div>
   );
 };
