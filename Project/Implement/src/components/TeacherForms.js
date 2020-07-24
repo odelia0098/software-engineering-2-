@@ -7,8 +7,6 @@ import Skills from "./TeacherSkills";
 import Education from "./TeacherEducation";
 import License from "./TeacherLicenses";
 
-// import Userdetails from "./Userdetails";
-
 const useStyles = makeStyles(theme => ({
   root: {
     "& .MuiTextField-root": {
@@ -112,7 +110,7 @@ const TeacherForm = () => {
       <Skills />
       <Education />
       <License />
-      <footer style={{ padding: "50px" }}> </footer>
+      <footer style={{ padding: "60px" }}> </footer>
     </div>
   );
 };
