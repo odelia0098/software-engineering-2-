@@ -19,6 +19,9 @@ const countries = [
   },
   {
     value: "Afqanestan"
+  },
+  {
+    value: "Turkey"
   }
 ];
 const Personal = props => {
