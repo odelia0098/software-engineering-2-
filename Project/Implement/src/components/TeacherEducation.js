@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-// import Plus from "@material-ui/icons/AddCircleOutlineRounded";
+
 import Icon from "@material-ui/core/Icon";
 
 const useStyles = makeStyles(theme => ({
@@ -22,8 +22,6 @@ const Education = () => {
       />
 
       <form>
-        {/* */}
-
         <div className="personal-forms">
           <div className="forms-names">
             <span>Education</span>
