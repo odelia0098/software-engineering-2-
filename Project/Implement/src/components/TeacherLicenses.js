@@ -22,13 +22,11 @@ const License = () => {
       />
 
       <form>
-        {/* */}
-
         <div className="personal-forms">
           <div className="forms-names">
             <span>Licenses & Experiments</span>
           </div>
-          {/* <Plus fontSize="large" color="action" /> */}
+
           <div className={classes.root}>
             <Icon
               className="addIcons"
