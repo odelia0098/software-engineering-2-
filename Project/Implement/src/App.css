@@ -228,6 +228,7 @@
 .personal-forms {
   margin-left: 250px;
   margin-top: 30px;
+  padding: 10px;
   /* margin-right: auto; */
   width: 1000px;
   background-color: white;
@@ -244,7 +245,7 @@
 
 #edit_text {
   margin-left: 250px;
-  margin-top: 100px;
+  margin-top: 120px;
   position: relative;
   overflow: visible;
   text-align: left;
@@ -257,6 +258,7 @@
 .forms-names {
   left: 35px;
   top: 20px;
+
   /* margin-bottom: 20px; */
   position: relative;
 }
@@ -318,9 +320,20 @@
 
 .top-form {
   margin-left: 250px;
-  margin-top: 100px;
+  margin-top: 20px;
   /* margin-right: auto; */
+  padding: 10px;
   width: 1000px;
   background-color: white;
   filter: drop-shadow(0px 3px 8px rgba(62, 100, 146, 0.161));
+}
+
+.results {
+  margin: 10px;
+  /* padding-bottom: 15px; */
+}
+
+.resultWrapper {
+  margin-left: 28px;
+  margin-top: 8px;
 }
