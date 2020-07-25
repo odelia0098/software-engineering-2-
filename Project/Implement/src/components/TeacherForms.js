@@ -6,14 +6,15 @@ import Job from "./TeacherJobExp";
 import Skills from "./TeacherSkills";
 import Education from "./TeacherEducation";
 import License from "./TeacherLicenses";
+import TeacherPanel from "./TeacherPanel";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     "& .MuiTextField-root": {
       margin: theme.spacing(3),
-      width: "30ch"
-    }
-  }
+      width: "30ch",
+    },
+  },
 }));
 
 const TeacherForm = () => {
@@ -31,7 +32,7 @@ const TeacherForm = () => {
 
   const [zipCode, setZipCode] = useState("");
 
-  const handleChange = input => e => {
+  const handleChange = (input) => (e) => {
     //console.log(e.target.value);
     if (input === "country") {
       setCountry(e.target.value);
@@ -82,9 +83,9 @@ const TeacherForm = () => {
 
   return (
     <div className={classes.root}>
-      {/* <div>
-        <StudentPanel />
-      </div> */}
+      <div>
+        <TeacherPanel />
+      </div>
       <div id="edit_text">
         <span>Edit Profile</span>
       </div>
