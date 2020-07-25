@@ -65,6 +65,7 @@ const Job = () => {
   const [endDate, setEndDate] = useState("");
   const [open, setOpen] = useState(false);
   const [isCurrent, setIsCurrent] = useState(false);
+  const [showResults, setShowResults] = React.useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -72,6 +73,24 @@ const Job = () => {
 
   const handleClose = () => {
     setOpen(false);
+    setShowResults(true);
+  };
+
+  const Results = () => {
+    return (
+      <div>
+        <Icon className="editIcons" style={{ fontSize: 35 }} color="secondary">
+          edit
+        </Icon>
+
+        <span className="results">{course}</span>
+        <span className="results">In: {school}</span>
+        <div className="resultWrapper">
+          <span className="results">From Date: {startDate}</span>
+          <span className="results">To Date: {endDate}</span>
+        </div>
+      </div>
+    );
   };
 
   const handleChange = input => e => {
@@ -131,16 +150,7 @@ const Job = () => {
               add_circle
             </Icon>
           </div>
-          <div>
-            <Icon
-              className="editIcons"
-              style={{ fontSize: 35 }}
-              color="secondary"
-              // onClick={Clicked}
-            >
-              edit
-            </Icon>
-          </div>
+          {showResults ? <Results /> : null}
         </div>
       </form>
 
@@ -155,7 +165,7 @@ const Job = () => {
             style={{ width: 230, margin: 15 }}
             required
             select
-            id="tcr-corse"
+            id="tcr-course"
             variant="outlined"
             label="Course"
             onChange={handleChange("course")}
@@ -250,7 +260,7 @@ const Job = () => {
                 checked={isCurrent}
               />
             }
-            label="I am currently work in this position"
+            label="I work in this position, currently"
           />
         </DialogContent>
         <DialogActions>
