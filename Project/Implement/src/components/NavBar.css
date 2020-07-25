@@ -41,7 +41,7 @@
 }
 #Home_Text {
   left: 30px;
-  top: 0px;
+  top: -50px;
   position: absolute;
   overflow: visible;
   width: 41px;
@@ -80,7 +80,7 @@
 }
 #EditProfile_Text {
   left: 28px;
-  top: 1.005px;
+  top: -50px;
   position: absolute;
   text-decoration: none;
   overflow: visible;
@@ -145,29 +145,30 @@
 }
 
 .Search_Box {
-  position: absolute;
+  position: relative;
   width: 138px;
   height: 18.39px;
   left: 379px;
   top: 34px;
   color: rgba(159, 169, 188, 1);
+  /* outline-style: solid; */
 }
 
 #Search_Icon {
   overflow: visible;
-  position: absolute;
+  position: relative;
   width: 25px;
   height: 25px;
-  left: 0px;
-  top: 0px;
+  left: -150px;
+  top: -23px;
   transform: matrix(1, 0, 0, 1, 0, 0);
   fill: rgba(159, 169, 188, 1);
 }
 
 #Search_Text {
-  left: 34px;
+  left: -120px;
   top: 1px;
-  position: absolute;
+  position: relative;
   overflow: visible;
   width: 175px;
   white-space: nowrap;
@@ -180,6 +181,9 @@
   color: rgba(159, 169, 188, 1);
 }
 
+#test {
+  cursor: pointer;
+}
 .profile_Indicator {
   position: absolute;
   width: 98.845px;
