@@ -1,4 +1,6 @@
 import React from "react";
+import SearchIcon from "@material-ui/icons/Search";
+import IconButton from "@material-ui/core/IconButton";
 import "./NavBar.css";
 
 const teacherInfo = {
@@ -7,11 +9,12 @@ const teacherInfo = {
   lastName: "",
   grade: "",
   city: "",
-  classes: [{ id: "", time: "", location: "", price: "" }]
+  classes: [{ id: "", time: "", location: "", price: "" }],
 };
 
 const SearchBox = () => {
-  const handleSearch = sParam => {
+  const handleSearch = (sParam) => {
+    // alert("B works");
     // send sParam to server and store result in the teacherInfo
     //Put the codes below in a loop to get all the teachers with specified parameters
     teacherInfo.name = "TestName";
@@ -37,7 +40,10 @@ const SearchBox = () => {
         placeholder="I'm searching for"
         className="test"
       />
-      <button id="Search_Icon" onClick={handleSearch} />
+
+      <IconButton aria-label="search" id="Search_Icon" onClick={handleSearch}>
+        <SearchIcon />
+      </IconButton>
     </div>
   );
 };
