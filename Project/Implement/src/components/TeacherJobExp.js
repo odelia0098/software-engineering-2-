@@ -12,118 +12,293 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 
-const useStyles = makeStyles(theme => ({
+import "./Modals.css";
+
+const useStyles = makeStyles((theme) => ({
   root: {
     "& > span": {
-      margin: theme.spacing(2)
-    }
-  }
+      margin: theme.spacing(2),
+    },
+  },
 }));
-
+const cache = [];
 const courses = [
   {
-    value: "Math"
+    value: "Math",
   },
   {
-    value: "Physics"
+    value: "Physics",
   },
   {
-    value: "Biology"
+    value: "Biology",
   },
   {
-    value: "Chemistry"
+    value: "Chemistry",
   },
   {
-    value: "Literature"
+    value: "Literature",
   },
   {
-    value: "Geography"
-  }
+    value: "Geography",
+  },
 ];
 
 const grades = [
   {
     id: 1,
     value: "Primary School",
-    checked: false
+    checked: false,
   },
   {
     id: 2,
     value: "Junior High School",
-    checked: false
+    checked: false,
   },
-  { id: 3, value: " High School", checked: false }
+  { id: 3, value: " High School", checked: false },
 ];
 
 const Job = () => {
+  var record = {
+    id: 0,
+    course: "",
+    school: "",
+    grade: "",
+    startDate: "",
+    endDate: "",
+  };
   const classes = useStyles();
 
-  const [course, setCourse] = useState("");
-  const [school, setSchool] = useState("");
-  const [grade, setGrade] = useState("");
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
+  const course = "";
+  const school = "";
+  const startDate = "";
+  const endDate = "";
+
   const [open, setOpen] = useState(false);
+  const [openEdit, setOpenEdit] = useState(false);
   const [isCurrent, setIsCurrent] = useState(false);
   const [showResults, setShowResults] = React.useState(false);
+  const [showEdit, setShowEdit] = React.useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
   };
 
   const handleClose = () => {
+    record.id = record.id++;
+    cache.push(record);
+    console.log(cache);
     setOpen(false);
     setShowResults(true);
   };
 
+  const showCourseAndGrade = cache.map(
+    (cache) => cache.course + " " + cache.grade
+  );
+  const showSchool = cache.map((cache) => cache.school);
+  const showDate = cache.map((cache) => cache.startDate + "-" + cache.endDate);
+
+  const handleOpenEdit = () => {
+    setOpenEdit(true);
+  };
+  const handleCloseEdit = () => {
+    setOpenEdit(false);
+  };
+  var temp;
+  const handleEdit = (input) => (e) => {
+    temp = cache.find(e.key);
+    console.log(e.key);
+  };
+
+  const editDialog = () => {
+    return (
+      <div>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        />
+        <Dialog
+          open={openEdit}
+          onClose={handleCloseEdit}
+          aria-labelledby="form-dialog-title"
+        >
+          <DialogTitle id="form-dialog-title">Job Experience</DialogTitle>
+          <DialogContent>
+            <TextField
+              style={{ width: 230, margin: 15 }}
+              required
+              select
+              id="tcr-course"
+              variant="outlined"
+              label="Course"
+              onChange={handleEdit("course")}
+              helperText="Required"
+              value={course}
+            >
+              {" "}
+              {courses.map((option) => (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.value}
+                </MenuItem>
+              ))}
+            </TextField>
+            <TextField
+              style={{ width: 230, margin: 15 }}
+              required
+              id="tcr-school"
+              variant="outlined"
+              label="School"
+              onChange={handleChange("school")}
+              helperText="Required"
+              value={school}
+            ></TextField>
+
+            <TextField
+              style={{ width: 230, margin: 15 }}
+              required
+              select
+              id="tcr-grade"
+              variant="outlined"
+              label="Grade"
+              onChange={handleChange("grade")}
+              helperText="Required"
+              value={grades}
+              SelectProps={{
+                multiple: false,
+                value: grades,
+              }}
+            >
+              {grades.map((option) => (
+                <div style={{ marginLeft: "10px" }}>
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        key={option.id}
+                        value={option.id}
+                        onChange={handleChange("grade")}
+                      />
+                    }
+                    label={option.value}
+                  />
+                </div>
+              ))}
+            </TextField>
+            <TextField
+              style={{ width: 230, margin: 15 }}
+              required
+              id="tcr-strdate"
+              variant="outlined"
+              label="Start Date"
+              type="date"
+              InputLabelProps={{
+                shrink: true,
+              }}
+              onChange={handleChange("startDate")}
+              helperText="Required"
+              value={startDate}
+            />
+            <TextField
+              style={{ width: 230, margin: 15 }}
+              required
+              id="tcr-enddate"
+              variant="outlined"
+              label="End Date"
+              type="date"
+              InputLabelProps={{
+                shrink: true,
+              }}
+              onChange={handleChange("endDate")}
+              helperText="Required"
+              value={endDate}
+            />
+            <FormControlLabel
+              control={
+                <Checkbox
+                  style={{ marginLeft: "12px" }}
+                  value={isCurrent}
+                  onChange={handleChange("isCurrent")}
+                  checked={isCurrent}
+                />
+              }
+              label="I work in this position, currently"
+            />
+          </DialogContent>
+          <DialogActions>
+            <Button
+              onClick={handleClose}
+              color="secondary"
+              style={{
+                margin: "15px",
+                color: "white",
+                backgroundColor: "rgba(255, 90, 135, 1)",
+              }}
+            >
+              Save
+            </Button>
+          </DialogActions>
+        </Dialog>
+      </div>
+    );
+  };
   const Results = () => {
     return (
       <div>
-        <Icon className="editIcons" style={{ fontSize: 35 }} color="secondary">
+        <Icon
+          className="editIcons"
+          style={{ fontSize: 35 }}
+          color="secondary"
+          onClick={handleOpenEdit}
+          key={cache.id}
+        >
           edit
         </Icon>
 
-        <span className="results">{course}</span>
-        <span className="results">In: {school}</span>
+        <span className="results" id="courseAndGrade" key={cache.id}>
+          {showCourseAndGrade}
+        </span>
+        <span className="results" id="school" key={cache.id}>
+          {showSchool}
+        </span>
+
         <div className="resultWrapper">
-          <span className="results">From Date: {startDate}</span>
-          <span className="results">To Date: {endDate}</span>
+          <span className="results" id="workingDate" key={cache.id}>
+            {showDate}
+          </span>
         </div>
       </div>
     );
   };
 
-  const handleChange = input => e => {
-    //console.log(e.target.value);
+  const handleChange = (input) => (e) => {
+    // handles adding new info to cache
+
     if (input === "startDate") {
-      setStartDate(e.target.value);
+      record.startDate = e.target.value;
     }
 
     if (input === "endDate") {
-      setEndDate(e.target.value);
+      record.endDate = e.target.value;
     }
 
     if (input === "course") {
-      setCourse(e.target.value);
+      record.course = e.target.value;
     }
 
     if (input === "school") {
-      setSchool(e.target.value);
+      record.school = e.target.value;
     }
 
     if (input === "isCurrent") {
-      setIsCurrent(e.target.checked);
+      document.getElementById("tcr-enddate").disabled = true;
+      record.endDate = "Current day";
     }
 
     if (input === "grade") {
-      //console.log("value:" + e.target.value + " checked: " + e.target.checked);
       for (const each of grades) {
         if (each.id == e.target.value) {
           each.checked = e.target.checked;
+          record.grade = each.value;
         }
       }
-      setGrade(grades);
-      //console.log(grades);
     }
   };
 
@@ -150,7 +325,8 @@ const Job = () => {
               add_circle
             </Icon>
           </div>
-          {showResults ? <Results /> : null}
+          <div>{showResults ? <Results /> : null}</div>
+          <div>{showEdit ? <editDialog /> : null}</div>
         </div>
       </form>
 
@@ -171,12 +347,9 @@ const Job = () => {
             onChange={handleChange("course")}
             helperText="Required"
             value={course}
-            // SelectProps={{
-            //   multiple: true
-            // }}
           >
             {" "}
-            {courses.map(option => (
+            {courses.map((option) => (
               <MenuItem key={option.value} value={option.value}>
                 {option.value}
               </MenuItem>
@@ -200,15 +373,15 @@ const Job = () => {
             id="tcr-grade"
             variant="outlined"
             label="Grade"
-            //onChange={handleChange("grade")}
+            onChange={handleChange("grade")}
             helperText="Required"
             value={grades}
             SelectProps={{
-              multiple: true,
-              value: grades
+              multiple: false,
+              value: grades,
             }}
           >
-            {grades.map(option => (
+            {grades.map((option) => (
               <div style={{ marginLeft: "10px" }}>
                 <FormControlLabel
                   control={
@@ -231,7 +404,7 @@ const Job = () => {
             label="Start Date"
             type="date"
             InputLabelProps={{
-              shrink: true
+              shrink: true,
             }}
             onChange={handleChange("startDate")}
             helperText="Required"
@@ -245,7 +418,7 @@ const Job = () => {
             label="End Date"
             type="date"
             InputLabelProps={{
-              shrink: true
+              shrink: true,
             }}
             onChange={handleChange("endDate")}
             helperText="Required"
@@ -270,7 +443,7 @@ const Job = () => {
             style={{
               margin: "15px",
               color: "white",
-              backgroundColor: "rgba(255, 90, 135, 1)"
+              backgroundColor: "rgba(255, 90, 135, 1)",
             }}
           >
             Save
