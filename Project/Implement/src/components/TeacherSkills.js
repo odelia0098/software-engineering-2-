@@ -13,44 +13,44 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     "& > span": {
-      margin: theme.spacing(2)
-    }
-  }
+      margin: theme.spacing(2),
+    },
+  },
 }));
 const skills = [
   {
-    value: "Math"
+    value: "Math",
   },
   {
-    value: "Physics"
+    value: "Physics",
   },
   {
-    value: "Biology"
+    value: "Biology",
   },
   {
-    value: "Chemistry"
+    value: "Chemistry",
   },
   {
-    value: "Literature"
+    value: "Literature",
   },
   {
-    value: "Geography"
+    value: "Geography",
   },
   {
-    value: "Algebra"
+    value: "Algebra",
   },
   {
-    value: "English"
+    value: "English",
   },
   {
-    value: "Arabic"
+    value: "Arabic",
   },
   {
-    value: "French"
-  }
+    value: "French",
+  },
 ];
 
 const Skills = () => {
@@ -63,6 +63,7 @@ const Skills = () => {
   const handleClose = () => {
     setOpen(false);
   };
+
   return (
     <div>
       <link
@@ -107,9 +108,9 @@ const Skills = () => {
                 multiple
                 id="tags-outlined"
                 options={skills}
-                getOptionLabel={option => option.value}
+                getOptionLabel={(option) => option.value}
                 filterSelectedOptions
-                renderInput={params => (
+                renderInput={(params) => (
                   <TextField
                     {...params}
                     style={{ width: 400, margin: 15 }}
@@ -127,7 +128,7 @@ const Skills = () => {
                 style={{
                   margin: "15px",
                   color: "white",
-                  backgroundColor: "rgba(255, 90, 135, 1)"
+                  backgroundColor: "rgba(255, 90, 135, 1)",
                 }}
               >
                 Save

@@ -102,7 +102,7 @@ const License = () => {
       setHaveCredit(e.target.checked);
       if (e.target.checked) {
         document.getElementById("license-enddate").disabled = true;
-        record.expireDate = "None";
+        record.expireDate = "Current day";
       } else if (e.target.checked == false) {
         document.getElementById("license-enddate").disabled = false;
       }
