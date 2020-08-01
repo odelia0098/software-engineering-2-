@@ -42,3 +42,47 @@
   font-size: 16px;
   color: rgba(0, 0, 0, 1);
 }
+
+#organ {
+  left: 169px;
+  top: 91px;
+  position: absolute;
+  overflow: visible;
+  width: 639px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 1);
+}
+
+#field {
+  left: 169px;
+  top: 122px;
+  position: absolute;
+  overflow: visible;
+  width: 144px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 1);
+}
+#licenseDate {
+  left: 169px;
+  top: 157px;
+  position: absolute;
+  overflow: visible;
+  width: 77px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 1);
+}

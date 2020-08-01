@@ -12,14 +12,21 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     "& > span": {
-      margin: theme.spacing(2)
-    }
-  }
+      margin: theme.spacing(2),
+    },
+  },
 }));
 
+var record = {
+  organ: "",
+  credentialID: "",
+  name: "",
+  issueDate: "",
+  expireDate: "",
+};
 const License = () => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
@@ -42,44 +49,63 @@ const License = () => {
   const Results = () => {
     return (
       <div>
-        <Icon className="editIcons" style={{ fontSize: 35 }} color="secondary">
+        <Icon
+          className="editIcons"
+          style={{ fontSize: 35 }}
+          color="secondary"
+          onClick={handleClickOpen}
+        >
           edit
         </Icon>
 
-        <span className="results">{name}</span>
-        <span className="results">from: {organ}</span>
+        <span className="results" id="organ">
+          {record.name + " for " + record.organ}
+        </span>
+        {/* <span className="results">from: {}</span> */}
         <div className="resultWrapper">
-          <span className="results">From Date: {issueDate}</span>
-          <span className="results">To Date: {expireDate}</span>
+          <span className="results" id="licenseDate">
+            {record.issueDate + "-" + record.expireDate}
+          </span>
+          {/* <span className="results">To Date: {}</span> */}
         </div>
       </div>
     );
   };
-  const handleChange = input => e => {
+  const handleChange = (input) => (e) => {
     //console.log(e.target.value);
     if (input === "expireDate") {
-      console.log("hiii");
+      // console.log("hiii");
       setExpireDate(e.target.value);
+      record.expireDate = e.target.value;
     }
 
     if (input === "issueDate") {
       setIssueDate(e.target.value);
+      record.issueDate = e.target.value;
     }
 
     if (input === "name") {
       setName(e.target.value);
+      record.name = e.target.value;
     }
 
     if (input === "organ") {
       setOrgan(e.target.value);
+      record.organ = e.target.value;
     }
 
     if (input === "credentialID") {
       setCredentialID(e.target.value);
-      console.log("ldjmdk");
+      record.credentialID = e.target.value;
     }
     if (input === "haveCredit") {
-      setHaveCredit(e.target.value);
+      setHaveCredit(e.target.checked);
+      if (e.target.checked) {
+        document.getElementById("license-enddate").disabled = true;
+        record.expireDate = "None";
+      } else if (e.target.checked == false) {
+        document.getElementById("license-enddate").disabled = false;
+      }
     }
   };
 
@@ -172,7 +198,7 @@ const License = () => {
             label="Issue Date"
             type="date"
             InputLabelProps={{
-              shrink: true
+              shrink: true,
             }}
             onChange={handleChange("issueDate")}
             helperText="Required"
@@ -186,7 +212,7 @@ const License = () => {
             label="Expiration Date"
             type="date"
             InputLabelProps={{
-              shrink: true
+              shrink: true,
             }}
             onChange={handleChange("expireDate")}
             helperText="Required"
@@ -211,7 +237,7 @@ const License = () => {
             style={{
               margin: "15px",
               color: "white",
-              backgroundColor: "rgba(255, 90, 135, 1)"
+              backgroundColor: "rgba(255, 90, 135, 1)",
             }}
           >
             Save

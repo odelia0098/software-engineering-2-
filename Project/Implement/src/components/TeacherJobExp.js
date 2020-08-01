@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-const cache = [];
+
 const courses = [
   {
     value: "Math",
@@ -56,211 +56,63 @@ const grades = [
   },
   { id: 3, value: " High School", checked: false },
 ];
+var record = {
+  id: 0,
+  course: "",
+  school: "",
+  grade: "",
+  startDate: "",
+  endDate: "",
+};
 
 const Job = () => {
-  var record = {
-    id: 0,
-    course: "",
-    school: "",
-    grade: "",
-    startDate: "",
-    endDate: "",
-  };
   const classes = useStyles();
 
-  const course = "";
-  const school = "";
-  const startDate = "";
-  const endDate = "";
+  const [course, setCourse] = useState("");
+  const [school, setSchool] = useState("");
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
+  const [grade, setGrade] = useState("");
 
   const [open, setOpen] = useState(false);
   const [openEdit, setOpenEdit] = useState(false);
-  const [isCurrent, setIsCurrent] = useState(false);
   const [showResults, setShowResults] = React.useState(false);
-  const [showEdit, setShowEdit] = React.useState(false);
+  const [isCurrent, setIsCurrent] = useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
   };
 
   const handleClose = () => {
-    record.id = record.id++;
-    cache.push(record);
-    console.log(cache);
     setOpen(false);
     setShowResults(true);
   };
 
-  const showCourseAndGrade = cache.map(
-    (cache) => cache.course + " " + cache.grade
-  );
-  const showSchool = cache.map((cache) => cache.school);
-  const showDate = cache.map((cache) => cache.startDate + "-" + cache.endDate);
+  const showCourseAndGrade = record.course + " " + record.grade;
+  const showSchool = record.school;
+  const showDate = record.startDate + "-" + record.endDate;
 
-  const handleOpenEdit = () => {
-    setOpenEdit(true);
-  };
-  const handleCloseEdit = () => {
-    setOpenEdit(false);
-  };
-  var temp;
-  const handleEdit = (input) => (e) => {
-    temp = cache.find(e.key);
-    console.log(e.key);
-  };
-
-  const editDialog = () => {
-    return (
-      <div>
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        />
-        <Dialog
-          open={openEdit}
-          onClose={handleCloseEdit}
-          aria-labelledby="form-dialog-title"
-        >
-          <DialogTitle id="form-dialog-title">Job Experience</DialogTitle>
-          <DialogContent>
-            <TextField
-              style={{ width: 230, margin: 15 }}
-              required
-              select
-              id="tcr-course"
-              variant="outlined"
-              label="Course"
-              onChange={handleEdit("course")}
-              helperText="Required"
-              value={course}
-            >
-              {" "}
-              {courses.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.value}
-                </MenuItem>
-              ))}
-            </TextField>
-            <TextField
-              style={{ width: 230, margin: 15 }}
-              required
-              id="tcr-school"
-              variant="outlined"
-              label="School"
-              onChange={handleChange("school")}
-              helperText="Required"
-              value={school}
-            ></TextField>
-
-            <TextField
-              style={{ width: 230, margin: 15 }}
-              required
-              select
-              id="tcr-grade"
-              variant="outlined"
-              label="Grade"
-              onChange={handleChange("grade")}
-              helperText="Required"
-              value={grades}
-              SelectProps={{
-                multiple: false,
-                value: grades,
-              }}
-            >
-              {grades.map((option) => (
-                <div style={{ marginLeft: "10px" }}>
-                  <FormControlLabel
-                    control={
-                      <Checkbox
-                        key={option.id}
-                        value={option.id}
-                        onChange={handleChange("grade")}
-                      />
-                    }
-                    label={option.value}
-                  />
-                </div>
-              ))}
-            </TextField>
-            <TextField
-              style={{ width: 230, margin: 15 }}
-              required
-              id="tcr-strdate"
-              variant="outlined"
-              label="Start Date"
-              type="date"
-              InputLabelProps={{
-                shrink: true,
-              }}
-              onChange={handleChange("startDate")}
-              helperText="Required"
-              value={startDate}
-            />
-            <TextField
-              style={{ width: 230, margin: 15 }}
-              required
-              id="tcr-enddate"
-              variant="outlined"
-              label="End Date"
-              type="date"
-              InputLabelProps={{
-                shrink: true,
-              }}
-              onChange={handleChange("endDate")}
-              helperText="Required"
-              value={endDate}
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  style={{ marginLeft: "12px" }}
-                  value={isCurrent}
-                  onChange={handleChange("isCurrent")}
-                  checked={isCurrent}
-                />
-              }
-              label="I work in this position, currently"
-            />
-          </DialogContent>
-          <DialogActions>
-            <Button
-              onClick={handleClose}
-              color="secondary"
-              style={{
-                margin: "15px",
-                color: "white",
-                backgroundColor: "rgba(255, 90, 135, 1)",
-              }}
-            >
-              Save
-            </Button>
-          </DialogActions>
-        </Dialog>
-      </div>
-    );
-  };
   const Results = () => {
     return (
-      <div>
+      <div id="editP">
         <Icon
           className="editIcons"
           style={{ fontSize: 35 }}
           color="secondary"
-          onClick={handleOpenEdit}
-          key={cache.id}
+          onClick={handleClickOpen}
         >
           edit
         </Icon>
 
-        <span className="results" id="courseAndGrade" key={cache.id}>
+        <span className="results" id="courseAndGrade">
           {showCourseAndGrade}
         </span>
-        <span className="results" id="school" key={cache.id}>
+        <span className="results" id="school">
           {showSchool}
         </span>
 
         <div className="resultWrapper">
-          <span className="results" id="workingDate" key={cache.id}>
+          <span className="results" id="workingDate">
             {showDate}
           </span>
         </div>
@@ -273,23 +125,32 @@ const Job = () => {
 
     if (input === "startDate") {
       record.startDate = e.target.value;
+      setStartDate(e.target.value);
     }
 
     if (input === "endDate") {
       record.endDate = e.target.value;
+      setEndDate(e.target.value);
     }
 
     if (input === "course") {
+      setCourse(e.target.value);
       record.course = e.target.value;
     }
 
     if (input === "school") {
+      setSchool(e.target.value);
       record.school = e.target.value;
     }
 
     if (input === "isCurrent") {
-      document.getElementById("tcr-enddate").disabled = true;
-      record.endDate = "Current day";
+      setIsCurrent(e.target.checked);
+      if (e.target.checked) {
+        document.getElementById("tcr-enddate").disabled = true;
+        record.endDate = "Current day";
+      } else if (e.target.checked == false) {
+        document.getElementById("tcr-enddate").disabled = false;
+      }
     }
 
     if (input === "grade") {
@@ -297,6 +158,7 @@ const Job = () => {
         if (each.id == e.target.value) {
           each.checked = e.target.checked;
           record.grade = each.value;
+          setGrade(each.value);
         }
       }
     }
@@ -326,7 +188,6 @@ const Job = () => {
             </Icon>
           </div>
           <div>{showResults ? <Results /> : null}</div>
-          <div>{showEdit ? <editDialog /> : null}</div>
         </div>
       </form>
 
@@ -375,7 +236,7 @@ const Job = () => {
             label="Grade"
             onChange={handleChange("grade")}
             helperText="Required"
-            value={grades}
+            value={grade}
             SelectProps={{
               multiple: false,
               value: grades,
