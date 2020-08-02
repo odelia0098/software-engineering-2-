@@ -69,6 +69,15 @@
   top: 179.774px;
   overflow: visible;
 }
+
+#TimeTable_Item {
+  position: relative;
+  /* width: 123px;
+  height: 20.112px; */
+  left: -5px;
+  top: 220px;
+  overflow: visible;
+}
 #EditProfile_Icon {
   overflow: visible;
   position: absolute;

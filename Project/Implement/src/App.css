@@ -337,3 +337,27 @@
   margin-left: 28px;
   margin-top: 8px;
 }
+
+#searchBar {
+  width: 1000px;
+  margin-left: -3px;
+  margin-top: 25px;
+
+  height: 65px;
+  border-radius: 20px;
+  filter: drop-shadow(0px 3px 80px rgba(0, 0, 0, 0.102));
+}
+
+#search1 {
+  margin-left: 240px;
+  margin-top: -10px;
+}
+
+.fontAwesome {
+  font-family: "Helvetica", FontAwesome, sans-serif;
+}
+
+.cardWrapper {
+  margin-left: 300px;
+  margin-top: 50px;
+}
