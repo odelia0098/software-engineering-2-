@@ -12,57 +12,77 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import MenuItem from "@material-ui/core/MenuItem";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
+import "./Modals.css";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     "& > span": {
-      margin: theme.spacing(2)
-    }
-  }
+      margin: theme.spacing(2),
+    },
+  },
 }));
 const skills = [
-  {
-    value: "Math"
-  },
-  {
-    value: "Physics"
-  },
-  {
-    value: "Biology"
-  },
-  {
-    value: "Chemistry"
-  },
-  {
-    value: "Literature"
-  },
-  {
-    value: "Geography"
-  },
-  {
-    value: "Algebra"
-  },
-  {
-    value: "English"
-  },
-  {
-    value: "Arabic"
-  },
-  {
-    value: "French"
-  }
-];
+  "Math",
 
+  "Physics",
+
+  "Biology",
+
+  "Chemistry",
+
+  "Literature",
+
+  "Geography",
+
+  "Algebra",
+
+  "English",
+
+  "Arabic",
+
+  "French",
+];
+var record = [];
 const Skills = () => {
   const classes = useStyles();
   const [open, setOpen] = useState("");
+  const [showResults, setShowResults] = React.useState(false);
+
   const handleClickOpen = () => {
     setOpen(true);
   };
 
   const handleClose = () => {
     setOpen(false);
+    setShowResults(true);
   };
+  const Results = () => {
+    return (
+      <div>
+        <Icon
+          className="editIcons"
+          style={{ fontSize: 35 }}
+          color="secondary"
+          onClick={handleClickOpen}
+        >
+          edit
+        </Icon>
+
+        <span className="results" id="school">
+          {record}
+        </span>
+        {/* <span className="results">from: {}</span> */}
+      </div>
+    );
+  };
+
+  // var i = 0;
+  // const handleSkills = (e, values) => {
+  //   record.push(values.value);
+  //   // alert(skills[e.target.value]);
+  //   // record.push(skills[e.target.value]);
+  // };
+
   return (
     <div>
       <link
@@ -85,16 +105,8 @@ const Skills = () => {
             >
               add_circle
             </Icon>
+            {showResults ? <Results /> : null}
           </div>
-          {/* <div>
-              <Icon
-                className="editIcons"
-                style={{ fontSize: 35 }}
-                color="secondary"
-              >
-                edit
-              </Icon>
-            </div> */}
 
           <Dialog
             open={open}
@@ -107,9 +119,9 @@ const Skills = () => {
                 multiple
                 id="tags-outlined"
                 options={skills}
-                getOptionLabel={option => option.value}
+                getOptionLabel={(option) => option}
                 filterSelectedOptions
-                renderInput={params => (
+                renderInput={(params) => (
                   <TextField
                     {...params}
                     style={{ width: 400, margin: 15 }}
@@ -118,6 +130,14 @@ const Skills = () => {
                     color="secondary"
                   />
                 )}
+                onChange={(e, values) => {
+                  for (var i = 0; i < values.length; i++) {
+                    if (!record.includes(values[i])) {
+                      record.push(values[i]);
+                      record.push(" ");
+                    }
+                  }
+                }}
               />
             </DialogContent>
             <DialogActions>
@@ -127,7 +147,7 @@ const Skills = () => {
                 style={{
                   margin: "15px",
                   color: "white",
-                  backgroundColor: "rgba(255, 90, 135, 1)"
+                  backgroundColor: "rgba(255, 90, 135, 1)",
                 }}
               >
                 Save
