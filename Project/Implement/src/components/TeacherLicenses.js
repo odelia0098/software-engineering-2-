@@ -12,12 +12,12 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
     "& > span": {
-      margin: theme.spacing(2),
-    },
-  },
+      margin: theme.spacing(2)
+    }
+  }
 }));
 
 var record = {
@@ -25,7 +25,7 @@ var record = {
   credentialID: "",
   name: "",
   issueDate: "",
-  expireDate: "",
+  expireDate: ""
 };
 const License = () => {
   const classes = useStyles();
@@ -71,7 +71,7 @@ const License = () => {
       </div>
     );
   };
-  const handleChange = (input) => (e) => {
+  const handleChange = input => e => {
     //console.log(e.target.value);
     if (input === "expireDate") {
       // console.log("hiii");
@@ -102,7 +102,7 @@ const License = () => {
       setHaveCredit(e.target.checked);
       if (e.target.checked) {
         document.getElementById("license-enddate").disabled = true;
-        record.expireDate = "None";
+        record.expireDate = "Current day";
       } else if (e.target.checked == false) {
         document.getElementById("license-enddate").disabled = false;
       }
@@ -198,7 +198,7 @@ const License = () => {
             label="Issue Date"
             type="date"
             InputLabelProps={{
-              shrink: true,
+              shrink: true
             }}
             onChange={handleChange("issueDate")}
             helperText="Required"
@@ -212,7 +212,7 @@ const License = () => {
             label="Expiration Date"
             type="date"
             InputLabelProps={{
-              shrink: true,
+              shrink: true
             }}
             onChange={handleChange("expireDate")}
             helperText="Required"
@@ -237,7 +237,7 @@ const License = () => {
             style={{
               margin: "15px",
               color: "white",
-              backgroundColor: "rgba(255, 90, 135, 1)",
+              backgroundColor: "rgba(255, 90, 135, 1)"
             }}
           >
             Save
