@@ -12,7 +12,7 @@ const StudentNB = () => {
             id="Home_Item"
             style={{ listStyleType: "none" }}
           >
-            <Link className="nav-link" id="Home_Text" to="/studentPanel">
+            <Link className="nav-link" id="Home_Text" to="/home">
               Home
             </Link>
           </li>
@@ -23,6 +23,16 @@ const StudentNB = () => {
           >
             <Link className="nav-link" id="EditProfile_Text" to="/studentForm">
               Edit Profile
+            </Link>
+          </li>
+
+          <li
+            className="nav-item"
+            id="TimeTable_Item"
+            style={{ listStyleType: "none" }}
+          >
+            <Link className="nav-link" id="EditProfile_Text" to="/stuTimeTable">
+              Time Table
             </Link>
           </li>
         </ul>

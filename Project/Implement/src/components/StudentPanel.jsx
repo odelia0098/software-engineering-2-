@@ -19,9 +19,9 @@ const StudentPanel = () => {
             <span className="navbar-brand" id="LAMP">
               LAMP
             </span>
-            <div className="Search_Box">
+            {/* <div className="Search_Box">
               <SearchBox />
-            </div>
+            </div> */}
             <div className="divider">
               <svg id="devider_Line" viewBox="0 0 1 30">
                 <path d="M 0 0 L 0 30" />

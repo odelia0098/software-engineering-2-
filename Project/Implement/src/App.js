@@ -5,12 +5,13 @@ import "./components/NavBar.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Login from "./components/Login";
-import Home from "./components/Home";
+import Home from "./components/StudentHome";
 import Signup from "./components/Signup";
 import StudentPanel from "./components/StudentPanel";
 import StudentForm from "./components/StudentForms";
 import TeacherForm from "./components/TeacherForms";
 import TeacherPanel from "./components/TeacherPanel";
+import StudentTimeTable from "./components/StudentTimeTable";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/signup" component={Signup} />
           <Route path="/studentPanel" component={StudentPanel} />
           <Route path="/studentform" component={StudentForm} />
+          <Route path="/stuTimeTable" component={StudentTimeTable} />
           <Route path="/teacherForm" component={TeacherForm} />
           <Route path="/teacherPanel" component={TeacherPanel} />
         </Switch>
