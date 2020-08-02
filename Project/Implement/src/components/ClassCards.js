@@ -22,7 +22,9 @@ const useStyles = makeStyles({
 
 const MiniCard = props => {
   const classes = useStyles();
-
+  const onClicked = () => {
+    console.log("Register clicked!");
+  };
   return (
     <Card className={classes.root}>
       <CardActionArea>
@@ -54,12 +56,10 @@ const MiniCard = props => {
             minWidth: "280px",
             color: "white"
           }}
+          onClick={onClicked}
         >
           Register
         </Button>
-        {/* <button style={{ backgroundColor: "rgba(255, 90, 135, 1)" }}>
-          Register
-        </button> */}
       </CardActions>
     </Card>
   );
