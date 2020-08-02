@@ -14,47 +14,47 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 
 import "./Modals.css";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
     "& > span": {
-      margin: theme.spacing(2),
-    },
-  },
+      margin: theme.spacing(2)
+    }
+  }
 }));
 
 const courses = [
   {
-    value: "Math",
+    value: "Math"
   },
   {
-    value: "Physics",
+    value: "Physics"
   },
   {
-    value: "Biology",
+    value: "Biology"
   },
   {
-    value: "Chemistry",
+    value: "Chemistry"
   },
   {
-    value: "Literature",
+    value: "Literature"
   },
   {
-    value: "Geography",
-  },
+    value: "Geography"
+  }
 ];
 
 const grades = [
   {
     id: 1,
     value: "Primary School",
-    checked: false,
+    checked: false
   },
   {
     id: 2,
     value: "Junior High School",
-    checked: false,
+    checked: false
   },
-  { id: 3, value: " High School", checked: false },
+  { id: 3, value: " High School", checked: false }
 ];
 var record = {
   id: 0,
@@ -62,7 +62,7 @@ var record = {
   school: "",
   grade: "",
   startDate: "",
-  endDate: "",
+  endDate: ""
 };
 
 const Job = () => {
@@ -104,23 +104,17 @@ const Job = () => {
           edit
         </Icon>
 
-        <span className="results" id="courseAndGrade">
-          {showCourseAndGrade}
-        </span>
-        <span className="results" id="school">
-          {showSchool}
-        </span>
+        <span id="courseAndGrade">{showCourseAndGrade}</span>
+        <span id="school">{showSchool}</span>
 
-        <div className="resultWrapper">
-          <span className="results" id="workingDate">
-            {showDate}
-          </span>
-        </div>
+        {/* <div className="resultWrapper"> */}
+        <span id="workingDate">{showDate}</span>
+        {/* </div> */}
       </div>
     );
   };
 
-  const handleChange = (input) => (e) => {
+  const handleChange = input => e => {
     // handles adding new info to cache
 
     if (input === "startDate") {
@@ -187,7 +181,9 @@ const Job = () => {
               add_circle
             </Icon>
           </div>
-          <div>{showResults ? <Results /> : null}</div>
+          <div style={{ marginBottom: "40px" }}>
+            {showResults ? <Results /> : null}
+          </div>
         </div>
       </form>
 
@@ -210,7 +206,7 @@ const Job = () => {
             value={course}
           >
             {" "}
-            {courses.map((option) => (
+            {courses.map(option => (
               <MenuItem key={option.value} value={option.value}>
                 {option.value}
               </MenuItem>
@@ -239,10 +235,10 @@ const Job = () => {
             value={grade}
             SelectProps={{
               multiple: false,
-              value: grades,
+              value: grades
             }}
           >
-            {grades.map((option) => (
+            {grades.map(option => (
               <div style={{ marginLeft: "10px" }}>
                 <FormControlLabel
                   control={
@@ -265,7 +261,7 @@ const Job = () => {
             label="Start Date"
             type="date"
             InputLabelProps={{
-              shrink: true,
+              shrink: true
             }}
             onChange={handleChange("startDate")}
             helperText="Required"
@@ -279,7 +275,7 @@ const Job = () => {
             label="End Date"
             type="date"
             InputLabelProps={{
-              shrink: true,
+              shrink: true
             }}
             onChange={handleChange("endDate")}
             helperText="Required"
@@ -304,7 +300,7 @@ const Job = () => {
             style={{
               margin: "15px",
               color: "white",
-              backgroundColor: "rgba(255, 90, 135, 1)",
+              backgroundColor: "rgba(255, 90, 135, 1)"
             }}
           >
             Save

@@ -132,16 +132,9 @@ const License = () => {
               add_circle
             </Icon>
           </div>
-          {showResults ? <Results /> : null}
-          {/* <div>
-              <Icon
-                className="editIcons"
-                style={{ fontSize: 35 }}
-                color="secondary"
-              >
-                edit
-              </Icon>
-            </div> */}
+          <div style={{ marginBottom: "50px" }}>
+            {showResults ? <Results /> : null}
+          </div>
         </div>
       </form>
 

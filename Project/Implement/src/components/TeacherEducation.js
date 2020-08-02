@@ -14,51 +14,51 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 
 import "./Modals.css";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
     "& > span": {
-      margin: theme.spacing(2),
-    },
-  },
+      margin: theme.spacing(2)
+    }
+  }
 }));
 
 const fields = [
   {
-    value: "Chemistry",
+    value: "Chemistry"
   },
   {
-    value: "Engineering",
+    value: "Engineering"
   },
   {
-    value: "Mathemathics",
+    value: "Mathemathics"
   },
   {
-    value: "Medical",
+    value: "Medical"
   },
   {
-    value: "Philosophy",
+    value: "Philosophy"
   },
   {
-    value: "Physics",
-  },
+    value: "Physics"
+  }
 ];
 
 const degrees = [
   {
-    value: "Diploma",
+    value: "Diploma"
   },
   {
-    value: "Bachelorl",
+    value: "Bachelorl"
   },
   { value: " Master" },
-  { value: " P.H.D" },
+  { value: " P.H.D" }
 ];
 var record = {
   institute: "",
   degree: "",
   field: "",
   startDate: "",
-  endDate: "",
+  endDate: ""
 };
 const Education = () => {
   const classes = useStyles();
@@ -110,7 +110,7 @@ const Education = () => {
     );
   };
 
-  const handleChange = (input) => (e) => {
+  const handleChange = input => e => {
     //console.log(e.target.value);
     if (input === "startDate") {
       setStartDate(e.target.value);
@@ -174,7 +174,9 @@ const Education = () => {
               add_circle
             </Icon>
           </div>
-          {showResults ? <Results /> : null}
+          <div style={{ marginBottom: "50px" }}>
+            {showResults ? <Results /> : null}
+          </div>
         </div>
       </form>
 
@@ -211,7 +213,7 @@ const Education = () => {
             value={field}
           >
             {" "}
-            {fields.map((option) => (
+            {fields.map(option => (
               <MenuItem key={option.value} value={option.value}>
                 {option.value}
               </MenuItem>
@@ -229,7 +231,7 @@ const Education = () => {
             helperText="Required"
             value={degree}
           >
-            {degrees.map((option) => (
+            {degrees.map(option => (
               <MenuItem key={option.value} value={option.value}>
                 {option.value}
               </MenuItem>
@@ -243,7 +245,7 @@ const Education = () => {
             label="Start Date"
             type="date"
             InputLabelProps={{
-              shrink: true,
+              shrink: true
             }}
             onChange={handleChange("startDate")}
             helperText="Required"
@@ -257,7 +259,7 @@ const Education = () => {
             label="End Date"
             type="date"
             InputLabelProps={{
-              shrink: true,
+              shrink: true
             }}
             onChange={handleChange("endDate")}
             helperText="Required"
@@ -282,7 +284,7 @@ const Education = () => {
             style={{
               margin: "15px",
               color: "white",
-              backgroundColor: "rgba(255, 90, 135, 1)",
+              backgroundColor: "rgba(255, 90, 135, 1)"
             }}
           >
             Save
