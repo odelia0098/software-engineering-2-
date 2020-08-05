@@ -110,16 +110,16 @@
 
 #topLabel_BG {
   position: absolute;
-  width: 1920px;
+  width: 1500px;
   height: 87px;
   left: 0px;
   top: 0px;
   overflow: visible;
 }
 .topLabel {
-  overflow: visible;
+  overflow: hidden;
   position: absolute;
-  width: 1944px;
+  width: 1500px;
   height: 111px;
   left: 0px;
   top: 0px;

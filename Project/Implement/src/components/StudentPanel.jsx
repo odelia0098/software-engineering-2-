@@ -27,7 +27,7 @@ const StudentPanel = () => {
                 <path d="M 0 0 L 0 30" />
               </svg>
             </div>
-            <div className="profile_Indicator">
+            {/* <div className="profile_Indicator">
               <img
                 src={require("../Images/Ellipse.png")}
                 id="profile_Pic"
@@ -35,7 +35,7 @@ const StudentPanel = () => {
                 loading="lazy"
               />
               <div id="profile_Name">Jack</div>
-            </div>
+            </div> */}
           </nav>
         </div>
       </div>
