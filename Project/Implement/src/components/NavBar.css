@@ -270,3 +270,61 @@
 input[type="text"] {
   border: none;
 }
+
+#req_Text {
+  left: 28px;
+  top: 10px;
+
+  text-decoration: none;
+  overflow: visible;
+  width: 73px;
+  position: absolute;
+  white-space: nowrap;
+  line-height: 20px;
+  margin-top: -2.5px;
+  text-align: left;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  color: rgba(159, 169, 188, 1);
+}
+#time_Text {
+  left: 28px;
+  top: 70px;
+
+  text-decoration: none;
+  overflow: visible;
+  width: 73px;
+  position: absolute;
+  white-space: nowrap;
+  line-height: 20px;
+  margin-top: -2.5px;
+  text-align: left;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  color: rgba(159, 169, 188, 1);
+}
+/* #req_Text:visited {
+  color: yellowgreen;
+} */
+/* 
+#req_Text:hover {
+  color: yellowgreen;
+}
+#req_Text:active {
+  color: yellowgreen;
+} */
+
+#req_Text:focus {
+  color: rgba(255, 90, 135, 1);
+}
+
+#time_Text:focus {
+  color: rgba(255, 90, 135, 1);
+}
+#EditProfile_Text:focus {
+  color: rgba(255, 90, 135, 1);
+}
