@@ -5,6 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Icon from "@material-ui/core/Icon";
 import SearchIcon from "@material-ui/icons/Search";
 import IconButton from "@material-ui/core/IconButton";
+import TimeTable from "./StudentTimeTableCards";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -14,8 +15,93 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+const myCourses = [
+  {
+    key: "1",
+    image: require("../Images/math1.png"),
+    instructor: "Sara Azizi",
+    course: "Mathematics",
+    grade: "Second grade",
+    days: "Saturday,  Monday",
+    time: "6:00 PM Until 7:30 PM",
+    price: "150,000 T/H",
+    location: "Isfahan/ Roodaki Street",
+    status: "Finished",
+    map: require("../Images/Map.png")
+  },
+  {
+    key: "2",
+    image: require("../Images/chem1.jpeg"),
+    instructor: "Neda Ashoori",
+    course: "Chemistry",
+    grade: "Eleventh grade",
+    days: "Saturday,  Monday",
+    time: "6:00 PM Until 7:30 PM",
+    price: "140,000 T/H",
+    location: "Isfahan/ Nikbakht Street",
+    status: "Pending for payment",
+    map: require("../Images/Map.png")
+  },
+  {
+    key: "3",
+    image: require("../Images/chem1.jpeg"),
+    instructor: "Neda Ashoori",
+    course: "Chemistry",
+    grade: "Eleventh grade",
+    days: "Saturday,  Monday",
+    time: "6:00 PM Until 7:30 PM",
+    price: "140,000 T/H",
+    location: "Isfahan/ Nikbakht Street",
+    status: "Registered",
+    map: require("../Images/Map.png")
+  },
+  {
+    key: "4",
+    image: require("../Images/chem1.jpeg"),
+    instructor: "Neda Ashoori",
+    course: "Chemistry",
+    grade: "Eleventh grade",
+    days: "Saturday,  Monday",
+    time: "6:00 PM Until 7:30 PM",
+    price: "140,000 T/H",
+    location: "Isfahan/ Nikbakht Street",
+    status: "Requested",
+    map: require("../Images/Map.png")
+  },
+  {
+    key: "4",
+    image: require("../Images/chem1.jpeg"),
+    instructor: "Neda Ashoori",
+    course: "Chemistry",
+    grade: "Eleventh grade",
+    days: "Saturday,  Monday",
+    time: "6:00 PM Until 7:30 PM",
+    price: "140,000 T/H",
+    location: "Isfahan/ Nikbakht Street",
+    status: "Rejected",
+    map: require("../Images/Map.png")
+  }
+];
+
 const StudentTimeTable = () => {
   const classes = useStyles();
+  const RenderCards = course => {
+    return (
+      <TimeTable
+        key={course.id}
+        status={course.status}
+        image={course.image}
+        instructor={course.instructor}
+        course={course.course}
+        grade={course.grade}
+        days={course.days}
+        time={course.time}
+        price={course.price}
+        location={course.location}
+        map={course.map}
+      />
+    );
+  };
   return (
     <div>
       <link
@@ -30,19 +116,23 @@ const StudentTimeTable = () => {
       <div id="edit_text">
         <span>Time Table</span>
       </div>
-
-      <div>
-        <IconButton aria-label="search" id="search1">
-          <SearchIcon style={{ fontSize: "40" }} />
-        </IconButton>
-        <input
-          className="fontAwesome"
-          type="text"
-          id="searchBar"
-          name="searchBar"
-          placeholder="        Search for classes, teachers, etc"
-        />
-      </div>
+      {myCourses.map(course => {
+        return (
+          <RenderCards
+            key={course.id}
+            image={course.image}
+            instructor={course.instructor}
+            course={course.course}
+            grade={course.grade}
+            days={course.days}
+            time={course.time}
+            price={course.price}
+            location={course.location}
+            status={course.status}
+            map={course.map}
+          />
+        );
+      })}
     </div>
   );
 };
