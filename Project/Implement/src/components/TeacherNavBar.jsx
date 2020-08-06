@@ -24,6 +24,13 @@ const TeacherNB = () => {
             <Link className="nav-link" id="EditProfile_Text" to="/teacherForm">
               Edit Profile
             </Link>
+
+            <Link className="nav-link" id="req_Text" to="/requests">
+              Requests
+            </Link>
+            <Link className="nav-link" id="time_Text" to="/teachTimeTable">
+              Time Table
+            </Link>
           </li>
         </ul>
       </nav>
