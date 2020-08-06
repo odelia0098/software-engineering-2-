@@ -7,6 +7,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import IconButton from "@material-ui/core/IconButton";
 
 import MiniCard from "./ClassCards";
+import { getThemeProps } from "@material-ui/styles";
 
 const useStyles = makeStyles({
   root: {
@@ -117,7 +118,7 @@ const courses = [
   }
 ];
 
-const StudentHome = () => {
+const StudentHome = props => {
   const [searchTerm, setSearchTerm] = React.useState("");
   const [searchResults, setSearchResults] = React.useState([]);
 
