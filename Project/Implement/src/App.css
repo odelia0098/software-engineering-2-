@@ -255,6 +255,19 @@
   color: black;
 }
 
+#req_text {
+  margin-left: 250px;
+  margin-top: 120px;
+  margin-bottom: 150;
+  position: relative;
+  overflow: visible;
+  text-align: left;
+  font-family: Roboto;
+  font-size: 30px;
+
+  color: black;
+}
+
 .forms-names {
   left: 35px;
   top: 20px;
@@ -360,4 +373,31 @@
 .cardWrapper {
   margin-left: 300px;
   margin-top: 50px;
+}
+
+.req_items {
+  /* width: 70px;
+  margin-right: 10px; */
+  font-size: 15px;
+  color: rgba(255, 90, 135, 1);
+  text-align: justify;
+  margin-bottom: 9px;
+}
+
+.req_details {
+  /* width: 70px;
+  margin-right: 10px; */
+  font-size: 15px;
+  color: black;
+  text-align: justify;
+  margin-bottom: 2px;
+}
+
+hr {
+  display: block;
+  height: 3px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
 }
