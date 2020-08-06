@@ -14,12 +14,12 @@ import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import "./Modals.css";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
     "& > span": {
-      margin: theme.spacing(2),
-    },
-  },
+      margin: theme.spacing(2)
+    }
+  }
 }));
 const skills = [
   "Math",
@@ -40,12 +40,12 @@ const skills = [
 
   "Arabic",
 
-  "French",
+  "French"
 ];
 var record = [];
 const Skills = () => {
   const classes = useStyles();
-  const [open, setOpen] = useState("");
+  const [open, setOpen] = useState(false);
   const [showResults, setShowResults] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -119,9 +119,9 @@ const Skills = () => {
                 multiple
                 id="tags-outlined"
                 options={skills}
-                getOptionLabel={(option) => option}
+                getOptionLabel={option => option}
                 filterSelectedOptions
-                renderInput={(params) => (
+                renderInput={params => (
                   <TextField
                     {...params}
                     style={{ width: 400, margin: 15 }}
@@ -147,7 +147,7 @@ const Skills = () => {
                 style={{
                   margin: "15px",
                   color: "white",
-                  backgroundColor: "rgba(255, 90, 135, 1)",
+                  backgroundColor: "rgba(255, 90, 135, 1)"
                 }}
               >
                 Save
