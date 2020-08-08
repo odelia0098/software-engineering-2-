@@ -1,6 +1,7 @@
 import React from "react";
 
 import TeacherNB from "./TeacherNavBar";
+
 import "./NavBar.css";
 
 const TeacherPanel = () => {

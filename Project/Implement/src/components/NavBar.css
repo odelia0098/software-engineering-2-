@@ -35,8 +35,9 @@
   position: absolute;
   width: 20px;
   height: 17.1px;
-  left: 0px;
-  top: 1.005px;
+  left: -30px;
+  /* top: 1.005px; */
+  top: 0px;
   transform: matrix(1, 0, 0, 1, 0, 0);
 }
 #Home_Text {
@@ -58,6 +59,10 @@
 }
 
 #Home_Text:focus {
+  color: rgba(255, 90, 135, 1);
+}
+
+#Home_Icon:focus {
   color: rgba(255, 90, 135, 1);
 }
 
@@ -83,7 +88,7 @@
   position: absolute;
   width: 14.816px;
   height: 20.112px;
-  left: 0px;
+  left: -30px;
   top: 0px;
   transform: matrix(1, 0, 0, 1, 0, 0);
 }
@@ -105,6 +110,9 @@
   color: rgba(159, 169, 188, 1);
 }
 #EditProfile_Text:focus {
+  color: rgba(255, 90, 135, 1);
+}
+#EditProfile_Icon:focus {
   color: rgba(255, 90, 135, 1);
 }
 
@@ -289,6 +297,15 @@ input[type="text"] {
   font-size: 15px;
   color: rgba(159, 169, 188, 1);
 }
+
+#req_Icon {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: -30px;
+  top: 0px;
+  overflow: visible;
+}
 #time_Text {
   left: 28px;
   top: 70px;
@@ -307,6 +324,16 @@ input[type="text"] {
   font-size: 15px;
   color: rgba(159, 169, 188, 1);
 }
+
+#time_Icon {
+  overflow: visible;
+  position: absolute;
+  width: 14.816px;
+  height: 20.112px;
+  left: -30px;
+  top: 0px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
 /* #req_Text:visited {
   color: yellowgreen;
 } */
@@ -322,7 +349,15 @@ input[type="text"] {
   color: rgba(255, 90, 135, 1);
 }
 
+#req_Icon:focus {
+  color: rgba(255, 90, 135, 1);
+}
+
 #time_Text:focus {
+  color: rgba(255, 90, 135, 1);
+}
+
+#time_Icon:focus {
   color: rgba(255, 90, 135, 1);
 }
 #EditProfile_Text:focus {
