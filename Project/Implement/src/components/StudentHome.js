@@ -27,12 +27,10 @@ const courses = [
     price: "150,000 T/H",
     grade: "2",
 
-
     days: "Sunday, Wednesday",
     startTime: "3 PM",
     endTime: "5 PM",
-    loc: "Isfahan"
-
+    loc: "Isfahan",
   },
   {
     key: "2",
@@ -42,12 +40,10 @@ const courses = [
     price: "150,000 T/H",
     grade: "3",
 
-
     days: "Saturday, Wednesday",
     startTime: "4.5 PM",
     endTime: "6 PM",
-    loc: "Tehran"
-
+    loc: "Tehran",
   },
   {
     key: "11",
@@ -57,12 +53,10 @@ const courses = [
     price: "150,000 T/H",
     grade: "4",
 
-
     days: "Sunday, Wednesday",
     startTime: "7 PM",
     endTime: "8.5 PM",
-    loc: "Semnan"
-
+    loc: "Semnan",
   },
 
   {
@@ -75,7 +69,7 @@ const courses = [
     days: "Monday, Wednesday",
     startTime: "10 AM",
     endTime: "12 AM",
-    loc: "Isfahan"
+    loc: "Isfahan",
   },
   {
     key: "3",
@@ -87,7 +81,7 @@ const courses = [
     days: "Sunday, Wednesday",
     startTime: "3 PM",
     endTime: "5 PM",
-    loc: "Yazd"
+    loc: "Yazd",
   },
   {
     key: "4",
@@ -99,7 +93,7 @@ const courses = [
     days: "Sunday, Thursday",
     startTime: "6 PM",
     endTime: "8 PM",
-    loc: "Isfahan"
+    loc: "Isfahan",
   },
   {
     key: "5",
@@ -111,7 +105,7 @@ const courses = [
     days: "Sunday, Wednesday",
     startTime: "2.5 PM",
     endTime: "4 PM",
-    loc: "Tehran"
+    loc: "Tehran",
   },
   {
     key: "6",
@@ -123,7 +117,7 @@ const courses = [
     days: "Monday",
     startTime: "4.5 PM",
     endTime: "6.5 PM",
-    loc: "Isfahan"
+    loc: "Isfahan",
   },
   {
     key: "7",
@@ -135,7 +129,7 @@ const courses = [
     days: "Sunday, Wednesday",
     startTime: "5.5 PM",
     endTime: "7 PM",
-    loc: "Isfahan"
+    loc: "Isfahan",
   },
   {
     key: "8",
@@ -147,7 +141,7 @@ const courses = [
     days: "Sunday, Wednesday",
     startTime: "3 PM",
     endTime: "5 PM",
-    loc: "Isfahan"
+    loc: "Isfahan",
   },
   {
     key: "9",
@@ -159,7 +153,7 @@ const courses = [
     days: "Sunday, Wednesday",
     startTime: "3 PM",
     endTime: "5 PM",
-    loc: "Isfahan"
+    loc: "Isfahan",
   },
   {
     key: "10",
@@ -168,12 +162,11 @@ const courses = [
     instructor: "Alireza pegah",
     price: "120,000 T/H",
     grade: "6",
-  },
     days: "Saturday, Wednesday",
     startTime: "7 PM",
     endTime: "8.5 PM",
-    loc: "Qom"
-  }
+    loc: "Qom",
+  },
 ];
 
 const StudentHome = (props) => {
