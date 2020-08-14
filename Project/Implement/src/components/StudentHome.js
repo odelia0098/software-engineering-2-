@@ -11,118 +11,118 @@ import { getThemeProps } from "@material-ui/styles";
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345
+    maxWidth: 345,
   },
   media: {
-    height: 140
-  }
+    height: 140,
+  },
 });
 
 const courses = [
   {
     key: "1",
-    image: require("../Images/math1.png"),
+    image: require("../Images/Math1.png"),
     name: "Mathematics",
     instructor: "Sara Azizi",
     price: "150,000 T/H",
-    grade: "2"
+    grade: "2",
   },
   {
     key: "2",
-    image: require("../Images/math2.png"),
+    image: require("../Images/Math2.png"),
     name: "Mathematics",
     instructor: "Ali Khodaee",
     price: "150,000 T/H",
-    grade: "3"
+    grade: "3",
   },
   {
     key: "11",
-    image: require("../Images/math3.png"),
+    image: require("../Images/Math3.png"),
     name: "Mathematics",
     instructor: "Tara Khodaee",
     price: "150,000 T/H",
-    grade: "4"
+    grade: "4",
   },
 
   {
     key: "12",
-    image: require("../Images/math4.png"),
+    image: require("../Images/Math4.png"),
     name: "Mathematics",
     instructor: "Mehran jamali",
     price: "130,000 T/H",
-    grade: "2"
+    grade: "2",
   },
   {
     key: "3",
-    image: require("../Images/bio1.jpeg"),
+    image: require("../Images/Biology1.jpeg"),
     name: "Biology",
     instructor: "Sam Omidi",
     price: "120,000 T/H",
-    grade: "9"
+    grade: "9",
   },
   {
     key: "4",
-    image: require("../Images/chem1.jpeg"),
+    image: require("../Images/Chemistry1.jpeg"),
     name: "Chemistry",
     instructor: "Neda Ashoori",
     price: "140,000 T/H",
-    grade: "11"
+    grade: "11",
   },
   {
     key: "5",
-    image: require("../Images/chem2.jpeg"),
+    image: require("../Images/Chemistry2.jpeg"),
     name: "Chemistry",
     instructor: "Neda Ashoori",
     price: "180,000 T/H",
-    grade: "12"
+    grade: "12",
   },
   {
     key: "6",
-    image: require("../Images/english5.jpeg"),
+    image: require("../Images/English5.jpeg"),
     name: "English",
     instructor: "Helen Joveyre",
     price: "90,000 T/H",
-    grade: "5"
+    grade: "5",
   },
   {
     key: "7",
-    image: require("../Images/french.jpeg"),
+    image: require("../Images/French1.jpeg"),
     name: "French",
     instructor: "Helen Joveyre",
     price: "120,000 T/H",
-    grade: "10"
+    grade: "10",
   },
   {
     key: "8",
-    image: require("../Images/history1.jpeg"),
+    image: require("../Images/History1.jpeg"),
     name: "History",
     instructor: "Alireza yazdani",
     price: "90,000 T/H",
-    grade: "8"
+    grade: "8",
   },
   {
     key: "9",
-    image: require("../Images/physics1.jpeg"),
+    image: require("../Images/Physics1.jpeg"),
     name: "Physics",
     instructor: "Alireza pegah",
     price: "180,000 T/H",
-    grade: "9"
+    grade: "9",
   },
   {
     key: "10",
-    image: require("../Images/sci1.jpeg"),
+    image: require("../Images/Geography1.jpeg"),
     name: "Science",
     instructor: "Alireza pegah",
     price: "120,000 T/H",
-    grade: "6"
-  }
+    grade: "6",
+  },
 ];
 
-const StudentHome = props => {
+const StudentHome = (props) => {
   const [searchTerm, setSearchTerm] = React.useState("");
   const [searchResults, setSearchResults] = React.useState([]);
 
-  const RenderCards = course => {
+  const RenderCards = (course) => {
     return (
       <MiniCard
         key={course.id}
@@ -135,7 +135,7 @@ const StudentHome = props => {
     );
   };
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     // const searcjQery = e.target.value.toLowerCase(),
     //   display = courses.filter(el => {
     //     setSearch(el.name.toLowerCase());
@@ -148,7 +148,7 @@ const StudentHome = props => {
     setSearchTerm(e.target.value);
   };
   React.useEffect(() => {
-    const results = courses.filter(person =>
+    const results = courses.filter((person) =>
       person.name.toLowerCase().includes(searchTerm)
     );
     setSearchResults(results);
@@ -184,7 +184,7 @@ const StudentHome = props => {
         />
       </div>
       <div className="cardWrapper">
-        {searchResults.map(el => {
+        {searchResults.map((el) => {
           return (
             <RenderCards
               key={el.id}

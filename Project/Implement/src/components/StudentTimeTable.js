@@ -7,18 +7,18 @@ import SearchIcon from "@material-ui/icons/Search";
 import IconButton from "@material-ui/core/IconButton";
 import TimeTable from "./StudentTimeTableCards";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     "& > span": {
-      margin: theme.spacing(2)
-    }
-  }
+      margin: theme.spacing(2),
+    },
+  },
 }));
 
 const myCourses = [
   {
     key: "1",
-    image: require("../Images/math1.png"),
+    image: require("../Images/Math1.png"),
     instructor: "Sara Azizi",
     course: "Mathematics",
     grade: "Second grade",
@@ -27,11 +27,11 @@ const myCourses = [
     price: "150,000 T/H",
     location: "Isfahan/ Roodaki Street",
     status: "Finished",
-    map: require("../Images/Map.png")
+    map: require("../Images/Map.png"),
   },
   {
     key: "2",
-    image: require("../Images/chem1.jpeg"),
+    image: require("../Images/Chemistry1.jpeg"),
     instructor: "Neda Ashoori",
     course: "Chemistry",
     grade: "Eleventh grade",
@@ -40,11 +40,11 @@ const myCourses = [
     price: "140,000 T/H",
     location: "Isfahan/ Nikbakht Street",
     status: "Pending for payment",
-    map: require("../Images/Map.png")
+    map: require("../Images/Map.png"),
   },
   {
     key: "3",
-    image: require("../Images/chem1.jpeg"),
+    image: require("../Images/Chemistry1.jpeg"),
     instructor: "Neda Ashoori",
     course: "Chemistry",
     grade: "Eleventh grade",
@@ -53,11 +53,11 @@ const myCourses = [
     price: "140,000 T/H",
     location: "Isfahan/ Nikbakht Street",
     status: "Registered",
-    map: require("../Images/Map.png")
+    map: require("../Images/Map.png"),
   },
   {
     key: "4",
-    image: require("../Images/chem1.jpeg"),
+    image: require("../Images/Chemistry1.jpeg"),
     instructor: "Neda Ashoori",
     course: "Chemistry",
     grade: "Eleventh grade",
@@ -66,11 +66,11 @@ const myCourses = [
     price: "140,000 T/H",
     location: "Isfahan/ Nikbakht Street",
     status: "Requested",
-    map: require("../Images/Map.png")
+    map: require("../Images/Map.png"),
   },
   {
     key: "4",
-    image: require("../Images/chem1.jpeg"),
+    image: require("../Images/Chemistry1.jpeg"),
     instructor: "Neda Ashoori",
     course: "Chemistry",
     grade: "Eleventh grade",
@@ -79,13 +79,13 @@ const myCourses = [
     price: "140,000 T/H",
     location: "Isfahan/ Nikbakht Street",
     status: "Rejected",
-    map: require("../Images/Map.png")
-  }
+    map: require("../Images/Map.png"),
+  },
 ];
 
 const StudentTimeTable = () => {
   const classes = useStyles();
-  const RenderCards = course => {
+  const RenderCards = (course) => {
     return (
       <TimeTable
         key={course.id}
@@ -116,7 +116,7 @@ const StudentTimeTable = () => {
       <div id="edit_text">
         <span>Time Table</span>
       </div>
-      {myCourses.map(course => {
+      {myCourses.map((course) => {
         return (
           <RenderCards
             key={course.id}

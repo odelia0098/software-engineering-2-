@@ -15,39 +15,39 @@ import NewClass from "./NewClassCards";
 
 import "./Modals.css";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     "& > span": {
-      margin: theme.spacing(2)
-    }
-  }
+      margin: theme.spacing(2),
+    },
+  },
 }));
 
 const courses = [
   {
-    value: "Math"
+    value: "Math",
   },
   {
-    value: "Physics"
+    value: "Physics",
   },
   {
-    value: "Biology"
+    value: "Biology",
   },
   {
-    value: "Chemistry"
+    value: "Chemistry",
   },
   {
-    value: "Literature"
+    value: "Literature",
   },
   {
-    value: "Geography"
+    value: "Geography",
   },
   {
-    value: "French"
+    value: "French",
   },
   {
-    value: "English"
-  }
+    value: "English",
+  },
 ];
 
 var record = {
@@ -56,64 +56,67 @@ var record = {
   school: "",
   grade: "",
   startDate: "",
-  endDate: ""
+  endDate: "",
 };
 const grades = [
   {
-    value: "1.st Garde"
+    value: "1.st Garde",
   },
   {
-    value: "2.nd Garde"
+    value: "2.nd Garde",
   },
   {
-    value: "3.rd Garde"
+    value: "3.rd Garde",
   },
   {
-    value: "4.th Garde"
+    value: "4.th Garde",
   },
   {
-    value: "5.th Garde"
+    value: "5.th Garde",
   },
   {
-    value: "6.th Garde"
+    value: "6.th Garde",
   },
   {
-    value: "7.th Garde"
+    value: "7.th Garde",
   },
   {
-    value: "8.th Garde"
+    value: "8.th Garde",
   },
   {
-    value: "9.th Garde"
+    value: "9.th Garde",
   },
   {
-    value: "10.th Garde"
+    value: "10.th Garde",
   },
   {
-    value: "11.th Garde"
+    value: "11.th Garde",
   },
   {
-    value: "12.th Garde"
-  }
+    value: "12.th Garde",
+  },
 ];
 
 const days = [
   {
     id: 1,
     value: "Saturday",
-    checked: false
+    checked: false,
   },
   {
     id: 2,
     value: "Sunday",
-    checked: false
+    checked: false,
   },
   { id: 3, value: "Monday", checked: false },
   { id: 4, value: "Thuesday", checked: false },
   { id: 5, value: "Wednesday", checked: false },
   { id: 6, value: "Thurseday", checked: false },
-  { id: 7, value: "Friday", checked: false }
+  { id: 7, value: "Friday", checked: false },
 ];
+
+const ImageName = [];
+const name = "";
 const AddClass = () => {
   const classes = useStyles();
 
@@ -133,7 +136,7 @@ const AddClass = () => {
     setOpen(true);
     showNewcard(false);
   };
-  const Test = item => {
+  const Test = (item) => {
     console.log("test");
     return (
       <div>
@@ -155,6 +158,13 @@ const AddClass = () => {
   };
 
   const handleClose = () => {
+    name = course;
+    switch (grade) {
+      case "1.st Garde":
+        name += "1";
+        break;
+    }
+
     setOpen(false);
     showNewcard(true);
     const copyArray = Object.assign([], allClasses);
@@ -166,7 +176,7 @@ const AddClass = () => {
       price1: price,
       endTime1: endTime,
       location1: location,
-      days1: activeDays.slice(-1)
+      days1: activeDays.slice(-1),
     });
     setID(ID + 1);
     // allClasses.push({
@@ -180,7 +190,7 @@ const AddClass = () => {
     // return allClasses;
   };
 
-  const handleChange = input => e => {
+  const handleChange = (input) => (e) => {
     // handles adding new info to cache
 
     if (input === "startTime") {
@@ -215,8 +225,8 @@ const AddClass = () => {
           setDays(days);
           activeDays.push(
             days
-              .filter(item => item.checked === true)
-              .map(activeDays => activeDays.value) + "  "
+              .filter((item) => item.checked === true)
+              .map((activeDays) => activeDays.value) + "  "
           );
           setActiveDays(activeDays);
 
@@ -246,7 +256,7 @@ const AddClass = () => {
           padding: "20px",
           color: "white",
           marginLeft: "1100px",
-          marginTop: "-30px"
+          marginTop: "-30px",
         }}
         onClick={handleClickOpen}
       >
@@ -289,7 +299,7 @@ const AddClass = () => {
             value={course}
           >
             {" "}
-            {courses.map(option => (
+            {courses.map((option) => (
               <MenuItem key={option.value} value={option.value}>
                 {option.value}
               </MenuItem>
@@ -307,7 +317,7 @@ const AddClass = () => {
             value={grade}
           >
             {" "}
-            {grades.map(option => (
+            {grades.map((option) => (
               <MenuItem key={option.value} value={option.value}>
                 {option.value}
               </MenuItem>
@@ -322,7 +332,7 @@ const AddClass = () => {
             label="Start Time"
             type="time"
             InputLabelProps={{
-              shrink: true
+              shrink: true,
             }}
             onChange={handleChange("startTime")}
             helperText="Required"
@@ -336,7 +346,7 @@ const AddClass = () => {
             label="End Time"
             type="time"
             InputLabelProps={{
-              shrink: true
+              shrink: true,
             }}
             onChange={handleChange("endTime")}
             helperText="Required"
@@ -354,10 +364,10 @@ const AddClass = () => {
             value={days}
             SelectProps={{
               multiple: true,
-              value: days
+              value: days,
             }}
           >
-            {days.map(option => (
+            {days.map((option) => (
               <div style={{ marginLeft: "10px" }}>
                 <FormControlLabel
                   control={
@@ -403,19 +413,19 @@ const AddClass = () => {
               marginRight: "60px",
               color: "white",
               width: "100px",
-              backgroundColor: "rgba(255, 90, 135, 1)"
+              backgroundColor: "rgba(255, 90, 135, 1)",
             }}
           >
             Add
           </Button>
         </DialogActions>
       </Dialog>
-      {allClasses.map(item => {
+      {allClasses.map((item) => {
         return (
           <Test
             key={item.id}
             // status={course.status}
-            // image={course.image}
+            // image={require{'../Images/${naem}.png'}}
             // instructor={course.instructor}
             courseName={item.courseName}
             grade={item.grade1}
