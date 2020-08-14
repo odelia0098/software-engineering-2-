@@ -13,25 +13,25 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Alert from "@material-ui/lab/Alert";
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     height: 300,
     marginTop: 30,
     marginLeft: "auto",
     marginRight: "auto",
-    maxWidth: "500px"
+    maxWidth: "500px",
   },
 
   cover: {
     width: 151,
     marginLeft: 30,
     marginTop: 3,
-    marginBottom: 50
-  }
+    marginBottom: 50,
+  },
 }));
 
-const TimeTableCards = props => {
+const TimeTableCards = (props) => {
   const classes = useStyles();
   const [openDialog, setOpenDialog] = useState(false);
 
@@ -43,8 +43,16 @@ const TimeTableCards = props => {
       />
 
       <Card className={classes.root}>
-        {/* <CardMedia className={classes.cover} image={props.image} /> */}
-
+        <CardMedia
+          className={classes.cover}
+          // style={{
+          //   width: "100px",
+          //   height: "100px",
+          //   marginRight: "10px",
+          // }}
+          image={props.image}
+        />
+        {/* {alert("props image: " + props.image)} */}
         <div>
           <CardContent className={classes.content}>
             <div
@@ -54,7 +62,7 @@ const TimeTableCards = props => {
                 width: "300px",
                 marginLeft: "150px",
 
-                marginTop: "20px"
+                marginTop: "20px",
               }}
             >
               <Typography component="h5" variant="h5">

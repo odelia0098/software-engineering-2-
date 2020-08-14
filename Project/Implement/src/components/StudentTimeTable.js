@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
 const myCourses = [
   {
     key: "1",
-    image: require("../Images/Math1.png"),
+    image: require("../Images/Math1.jpeg"),
     instructor: "Sara Azizi",
     course: "Mathematics",
     grade: "Second grade",

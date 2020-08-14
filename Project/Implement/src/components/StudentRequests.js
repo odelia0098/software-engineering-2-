@@ -5,7 +5,7 @@ import TeacherPanel from "./TeacherPanel";
 const requests = [
   {
     key: "1",
-    image: require("../Images/math1.png"),
+    image: require("../Images/Math1.jpeg"),
     student: "Ali karimian",
     course: "Mathematics",
     grade: "Second grade",
@@ -13,12 +13,12 @@ const requests = [
 
     gpa: "19.8",
     email: "Ali@gmail.com",
-    city: "Tehran"
+    city: "Tehran",
   },
 
   {
     key: "2",
-    image: require("../Images/math2.png"),
+    image: require("../Images/Math2.jpeg"),
     student: "Ziba Ara",
     course: "Mathematics",
     grade: "Second grade",
@@ -26,11 +26,11 @@ const requests = [
 
     gpa: "19.98",
     email: "Ziba@gmail.com",
-    city: "Shiraz"
-  }
+    city: "Shiraz",
+  },
 ];
-const StuRequest = props => {
-  const RenderCards = req => {
+const StuRequest = (props) => {
+  const RenderCards = (req) => {
     return (
       <Req
         key={req.id}
@@ -51,7 +51,7 @@ const StuRequest = props => {
       <div id="req_text">
         <span>Requests</span>
       </div>
-      {requests.map(req => {
+      {requests.map((req) => {
         return (
           <RenderCards
             key={req.id}

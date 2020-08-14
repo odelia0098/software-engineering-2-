@@ -21,7 +21,7 @@ const useStyles = makeStyles({
 const courses = [
   {
     key: "1",
-    image: require("../Images/Math1.png"),
+    image: require("../Images/Math1.jpeg"),
     name: "Mathematics",
     instructor: "Sara Azizi",
     price: "150,000 T/H",
@@ -34,7 +34,7 @@ const courses = [
   },
   {
     key: "2",
-    image: require("../Images/Math2.png"),
+    image: require("../Images/Math2.jpeg"),
     name: "Mathematics",
     instructor: "Ali Khodaee",
     price: "150,000 T/H",
@@ -47,7 +47,7 @@ const courses = [
   },
   {
     key: "11",
-    image: require("../Images/Math3.png"),
+    image: require("../Images/Math3.jpeg"),
     name: "Mathematics",
     instructor: "Tara Khodaee",
     price: "150,000 T/H",
@@ -61,7 +61,7 @@ const courses = [
 
   {
     key: "12",
-    image: require("../Images/Math4.png"),
+    image: require("../Images/Math4.jpeg"),
     name: "Mathematics",
     instructor: "Mehran jamali",
     price: "130,000 T/H",

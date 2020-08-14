@@ -115,11 +115,10 @@ const days = [
   { id: 7, value: "Friday", checked: false },
 ];
 
-const ImageName = [];
-const name = "";
+var temp = "";
 const AddClass = () => {
   const classes = useStyles();
-
+  const [name, setImageName] = useState("");
   const [course, setCourse] = useState("");
   const [day, setDays] = useState("");
   const [startTime, setStartTime] = useState("");
@@ -143,7 +142,7 @@ const AddClass = () => {
         <NewClass
           key={item.id}
           // status={course.status}
-          // image={course.image}
+          image={item.image}
           // instructor={course.instructor}
           courseName={item.courseName}
           grade={item.grade}
@@ -158,18 +157,34 @@ const AddClass = () => {
   };
 
   const handleClose = () => {
-    name = course;
+    temp = "../Images/";
+    temp = temp.concat(course);
     switch (grade) {
       case "1.st Garde":
-        name += "1";
+        temp = temp.concat("1");
+        break;
+      case "2.nd Garde":
+        temp = temp.concat("2");
+        break;
+      case "3.rd Garde":
+        temp = temp.concat("3");
+        break;
+      case "4.th Garde":
+        temp = temp.concat("4");
+        break;
+      case "5.th Garde":
+        temp = temp.concat("5");
         break;
     }
-
+    temp = temp.concat(".jpeg");
+    setImageName(temp.value);
+    // alert("Name : " + name);
     setOpen(false);
     showNewcard(true);
-    const copyArray = Object.assign([], allClasses);
+
     allClasses.push({
       id: ID,
+      image: temp,
       courseName: course,
       grade1: grade,
       startTime1: startTime,
@@ -178,6 +193,7 @@ const AddClass = () => {
       location1: location,
       days1: activeDays.slice(-1),
     });
+    // alert("allclasses image name: " + allClasses.image);
     setID(ID + 1);
     // allClasses.push({
     //   course: "hhhjjj",
@@ -425,7 +441,7 @@ const AddClass = () => {
           <Test
             key={item.id}
             // status={course.status}
-            // image={require{'../Images/${naem}.png'}}
+            image={item.image}
             // instructor={course.instructor}
             courseName={item.courseName}
             grade={item.grade1}
