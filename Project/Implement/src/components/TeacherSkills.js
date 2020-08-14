@@ -14,12 +14,12 @@ import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import "./Modals.css";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     "& > span": {
-      margin: theme.spacing(2)
-    }
-  }
+      margin: theme.spacing(2),
+    },
+  },
 }));
 const skills = [
   "Math",
@@ -40,19 +40,29 @@ const skills = [
 
   "Arabic",
 
-  "French"
+  "French",
 ];
+
+var temp = [];
+
 var record = [];
+
 const Skills = () => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
+  // const [openEdit, setOpenEdit] = useState(false);
   const [showResults, setShowResults] = React.useState(false);
+  const [pendingValue, setPendingValue] = useState("");
 
   const handleClickOpen = () => {
     setOpen(true);
   };
 
   const handleClose = () => {
+    // PendingRecord.push(pendingValue);
+    record = [];
+    record.push(pendingValue);
+
     setOpen(false);
     setShowResults(true);
   };
@@ -65,22 +75,26 @@ const Skills = () => {
           color="secondary"
           onClick={handleClickOpen}
         >
+          {/* {openEdit ? <handleEdit /> : null} */}
           edit
         </Icon>
 
         <span className="results" id="school">
           {record}
         </span>
-        {/* <span className="results">from: {}</span> */}
       </div>
     );
   };
 
-  // var i = 0;
-  // const handleSkills = (e, values) => {
-  //   record.push(values.value);
-  //   // alert(skills[e.target.value]);
-  //   // record.push(skills[e.target.value]);
+  const handleOnChange = (e, values) => {
+    setPendingValue(values + " ");
+  };
+
+  // const getValues = () => {
+  //   for (var i = 0; i < record.length; i = i + 2) {
+  //     PendingRecord.push(record[i]);
+  //   }
+  //   return pendingValue;
   // };
 
   return (
@@ -119,9 +133,10 @@ const Skills = () => {
                 multiple
                 id="tags-outlined"
                 options={skills}
-                getOptionLabel={option => option}
+                getOptionLabel={(option) => option}
                 filterSelectedOptions
-                renderInput={params => (
+                defaultValue={record || {}}
+                renderInput={(params) => (
                   <TextField
                     {...params}
                     style={{ width: 400, margin: 15 }}
@@ -130,14 +145,8 @@ const Skills = () => {
                     color="secondary"
                   />
                 )}
-                onChange={(e, values) => {
-                  for (var i = 0; i < values.length; i++) {
-                    if (!record.includes(values[i])) {
-                      record.push(values[i]);
-                      record.push(" ");
-                    }
-                  }
-                }}
+                selectOnFocus
+                onChange={handleOnChange}
               />
             </DialogContent>
             <DialogActions>
@@ -147,7 +156,7 @@ const Skills = () => {
                 style={{
                   margin: "15px",
                   color: "white",
-                  backgroundColor: "rgba(255, 90, 135, 1)"
+                  backgroundColor: "rgba(255, 90, 135, 1)",
                 }}
               >
                 Save
