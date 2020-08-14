@@ -18,7 +18,7 @@ const TeacherNB = () => {
             id="Home_Item"
             style={{ listStyleType: "none" }}
           >
-            <Link className="nav-link" id="Home_Text" to="/teacherPanel">
+            <Link className="nav-link" id="Home_Text" to="/addClass">
               <HomeIcon id="Home_Icon" />
               Home
             </Link>

@@ -14,6 +14,7 @@ import TeacherPanel from "./components/TeacherPanel";
 import StudentTimeTable from "./components/StudentTimeTable";
 import TeacherTimeTable from "./components/TeacherTimeTable";
 import StuRequest from "./components/StudentRequests";
+import AddClass from "./components/AddClasses";
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
           <Route path="/teacherForm" component={TeacherForm} />
           <Route path="/teacherPanel" component={TeacherPanel} />
           <Route path="/requests" component={StuRequest} />
+          <Route path="/addClass" component={AddClass} />
         </Switch>
       </div>
     </Router>
