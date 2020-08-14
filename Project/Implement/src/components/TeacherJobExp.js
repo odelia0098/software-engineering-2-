@@ -234,7 +234,7 @@ const Job = () => {
             helperText="Required"
             value={grade}
             SelectProps={{
-              multiple: false,
+              multiple: true,
               value: grades
             }}
           >
