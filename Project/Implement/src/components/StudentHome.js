@@ -25,7 +25,11 @@ const courses = [
     name: "Mathematics",
     instructor: "Sara Azizi",
     price: "150,000 T/H",
-    grade: "2"
+    grade: "2",
+    days: "Sunday, Wednesday",
+    startTime: "3 PM",
+    endTime: "5 PM",
+    loc: "Isfahan"
   },
   {
     key: "2",
@@ -33,7 +37,11 @@ const courses = [
     name: "Mathematics",
     instructor: "Ali Khodaee",
     price: "150,000 T/H",
-    grade: "3"
+    grade: "3",
+    days: "Saturday, Wednesday",
+    startTime: "4.5 PM",
+    endTime: "6 PM",
+    loc: "Tehran"
   },
   {
     key: "11",
@@ -41,7 +49,11 @@ const courses = [
     name: "Mathematics",
     instructor: "Tara Khodaee",
     price: "150,000 T/H",
-    grade: "4"
+    grade: "4",
+    days: "Sunday, Wednesday",
+    startTime: "7 PM",
+    endTime: "8.5 PM",
+    loc: "Semnan"
   },
 
   {
@@ -50,7 +62,11 @@ const courses = [
     name: "Mathematics",
     instructor: "Mehran jamali",
     price: "130,000 T/H",
-    grade: "2"
+    grade: "2",
+    days: "Monday, Wednesday",
+    startTime: "10 AM",
+    endTime: "12 AM",
+    loc: "Isfahan"
   },
   {
     key: "3",
@@ -58,7 +74,11 @@ const courses = [
     name: "Biology",
     instructor: "Sam Omidi",
     price: "120,000 T/H",
-    grade: "9"
+    grade: "9",
+    days: "Sunday, Wednesday",
+    startTime: "3 PM",
+    endTime: "5 PM",
+    loc: "Yazd"
   },
   {
     key: "4",
@@ -66,7 +86,11 @@ const courses = [
     name: "Chemistry",
     instructor: "Neda Ashoori",
     price: "140,000 T/H",
-    grade: "11"
+    grade: "11",
+    days: "Sunday, Thursday",
+    startTime: "6 PM",
+    endTime: "8 PM",
+    loc: "Isfahan"
   },
   {
     key: "5",
@@ -74,7 +98,11 @@ const courses = [
     name: "Chemistry",
     instructor: "Neda Ashoori",
     price: "180,000 T/H",
-    grade: "12"
+    grade: "12",
+    days: "Sunday, Wednesday",
+    startTime: "2.5 PM",
+    endTime: "4 PM",
+    loc: "Tehran"
   },
   {
     key: "6",
@@ -82,7 +110,11 @@ const courses = [
     name: "English",
     instructor: "Helen Joveyre",
     price: "90,000 T/H",
-    grade: "5"
+    grade: "5",
+    days: "Monday",
+    startTime: "4.5 PM",
+    endTime: "6.5 PM",
+    loc: "Isfahan"
   },
   {
     key: "7",
@@ -90,7 +122,11 @@ const courses = [
     name: "French",
     instructor: "Helen Joveyre",
     price: "120,000 T/H",
-    grade: "10"
+    grade: "10",
+    days: "Sunday, Wednesday",
+    startTime: "5.5 PM",
+    endTime: "7 PM",
+    loc: "Isfahan"
   },
   {
     key: "8",
@@ -98,7 +134,11 @@ const courses = [
     name: "History",
     instructor: "Alireza yazdani",
     price: "90,000 T/H",
-    grade: "8"
+    grade: "8",
+    days: "Sunday, Wednesday",
+    startTime: "3 PM",
+    endTime: "5 PM",
+    loc: "Isfahan"
   },
   {
     key: "9",
@@ -106,7 +146,11 @@ const courses = [
     name: "Physics",
     instructor: "Alireza pegah",
     price: "180,000 T/H",
-    grade: "9"
+    grade: "9",
+    days: "Sunday, Wednesday",
+    startTime: "3 PM",
+    endTime: "5 PM",
+    loc: "Isfahan"
   },
   {
     key: "10",
@@ -114,7 +158,11 @@ const courses = [
     name: "Science",
     instructor: "Alireza pegah",
     price: "120,000 T/H",
-    grade: "6"
+    grade: "6",
+    days: "Saturday, Wednesday",
+    startTime: "7 PM",
+    endTime: "8.5 PM",
+    loc: "Qom"
   }
 ];
 
@@ -131,6 +179,10 @@ const StudentHome = props => {
         instructor={course.instructor}
         grade={course.grade}
         price={course.price}
+        days={course.days}
+        startTime={course.startTime}
+        endTime={course.endTime}
+        loc={course.loc}
       />
     );
   };
@@ -193,6 +245,10 @@ const StudentHome = props => {
               instructor={el.instructor}
               grade={el.grade}
               price={el.price}
+              days={el.days}
+              startTime={el.startTime}
+              endTime={el.endTime}
+              loc={el.loc}
             />
           );
         })}
