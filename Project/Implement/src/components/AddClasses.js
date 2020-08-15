@@ -264,6 +264,20 @@ const AddClass = () => {
       <div id="edit_text">
         <span>Home</span>
       </div>
+      <div
+        style={{
+          marginLeft: "250px",
+          marginTop: "20px",
+          position: "relative",
+          overflow: "visible",
+          textAlign: "left",
+          fontFamily: "Roboto",
+          fontSize: "17px",
+          color: "black",
+        }}
+      >
+        <span>Create your class cards and review your classes.</span>
+      </div>
 
       <Button
         style={{
