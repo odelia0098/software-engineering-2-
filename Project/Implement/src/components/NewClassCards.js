@@ -5,14 +5,7 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import CardActions from "@material-ui/core/CardActions";
-import Chip from "@material-ui/core/Chip";
-import Button from "@material-ui/core/Button";
-import Dialog from "@material-ui/core/Dialog";
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import Alert from "@material-ui/lab/Alert";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -36,6 +29,14 @@ const TimeTableCards = (props) => {
   const [openDialog, setOpenDialog] = useState(false);
   // const [imgPath, setImagePath] = useState("");
 
+  const styles = {
+    media: {
+      width: "150px",
+      height: "150px",
+      paddingTop: "56.25%", // 16:9,
+      marginTop: "30",
+    },
+  };
   return (
     <div>
       <link
@@ -45,14 +46,12 @@ const TimeTableCards = (props) => {
 
       <Card className={classes.root}>
         <CardMedia
-          className={classes.cover}
-          style={{
-            width: "150px",
-            height: "150px",
-            marginRight: "10px",
-          }}
-          image={String(props.image)}
-        />
+          className={classes.media}
+          style={styles.media}
+          src={props.image}
+        >
+          {/* <img src={require(props.image)} alt="Image not found" /> */}
+        </CardMedia>
         {/* {alert("props image: " + props.image)} */}
         <div>
           {/* <CardContent className={classes.content}> */}
